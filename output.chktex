@@ -1,0 +1,4 @@
+main.tex:87:58: Error: `]' expected, found `}'. \providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}  
+main.tex:88:57: Error: `}' expected, found `]'. \providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}  
+main.tex:90:55: Error: `)' expected, found `}'. \providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}  
+main.tex:91:54: Error: `}' expected, found `)'. \providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}  
