@@ -37,6 +37,8 @@ plt.plot(R[0], R[1], 'o')
 
 
 plt.annotate("Desired Point (1/13,5/13 )", (P[0], P[1]))
+plt.annotate("x intercept (6/13,0 )", (Q[0], Q[1]))
+plt.annotate("y intercept (0,6/13 )", (R[0], R[1]))
 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
