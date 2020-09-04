@@ -219,62 +219,69 @@ Transforming the matrix into row-echelon form \\
 }
 \end{align}
 Thus, The point of intersection is at point (2/26 , 5/13) i.e. (0.07, 0.38)\\
-The equation of line in terms of vector notations can be written as
+
+
+let the equation of the line be
+\begin{align}
+\vec{n}^T\vec{x} = c \implies \vec{x}^T\vec{n} = c
+\end{align}
+Let the intercepts be a,b on the x and y axis respectively. Then,
+\begin{align} 
+\myvec{a & 0}\vec{n} = c
+\end{align}
+\\
+\begin{align} 
+\myvec{0 & b}\vec{n} = c
+\end{align}
+As the required line passes through the point of intersection (2/26, 5/13) and the intercepts are equal, the intercepts can be written as:
+\begin{align} 
+\myvec{6/13 & 0}\vec{n} = c
+\end{align}
+\\
+\begin{align} 
+\myvec{0 & 6/13}\vec{n} = c
+\end{align}
+resulting in the matrix equation
 \begin{equation}
-	{\vec{n}^T}{\vec{x}} = b 
-	\qquad \text{ where } \qquad 
-	{\vec{n}}= 
+\myvec{6/13 & 0 \\ 0 & 6/13}\vec{n} = c \myvec{1 \\ 1}
+where
+\vec{n}= 
 \begin{pmatrix}
 	n_{11} \\ 
 	n_{12}
-\end{pmatrix}
+\end{pmatrix} 
 \end{equation}
-	or
+\begin{equation}
+ \implies
+ \myvec{6/13 & 0 \\ 0 & 6/13}\begin{pmatrix}
+	n_{11} \\ 
+	n_{12}
+\end{pmatrix}
+= c \myvec{1 \\ 1}
+\end{equation}
+upon substitution we get, 
+\begin{align}
+\frac{6}{13}n_{11}=c  \implies n_{11} = \frac{c}{6/13}
+\end{align}
+\begin{align}
+\frac{6}{13}n_{12}=c \implies n_{12} = \frac{c}{6/13}
+\end{align}
+
+So, the equation of line can be written as
+\begin{equation}
+	{\vec{n}^T}{\vec{x}} = c 
+\end{equation}
 \begin{equation}
 \begin{pmatrix}
 	n_{11} & n_{12}
 \end{pmatrix}
-	{\mathbf{x}} = b	\label{eq2}
-\end{equation}
-Let the intercepts be 
-\myvec{
-a \\
-0
-},\myvec{
-0 \\
-b
-}
-respectively. \\
-As the required line passes through the point of intersection (2/26, 5/13) and the intercepts are equal, the intercepts can be written as:
-\begin{pmatrix}
-   6/13 \\ 
-    0\\
-\end{pmatrix} and 
-\begin{pmatrix}
-    0 \\ 
-    6/13\\
-\end{pmatrix}.\\
-When the line passes through 
+\vec{x} = c\end{equation}
 \begin{align}
 \myvec{
-6/13 &\
-6/13
+\frac{c}{6/13} &\
+\frac{c}{6/13}
 }
-\end{align}
-upon substitution we get, 
-\begin{align}
-\frac{6}{13}n_{11}=b  \implies n_{11} = \frac{b}{6/13}
-\end{align}
-\begin{align}
-\frac{6}{13}n_{12}=b \implies n_{12} = \frac{b}{6/13}
-\end{align}
-Therefore, the equation of the line is
-\begin{align}
-\myvec{
-\frac{b}{6/13} &\
-\frac{b}{6/13}
-}
-	{\vec{x}} = b
+	{\vec{x}} = c
 	\end{align}
 \begin{equation}
 \implies
