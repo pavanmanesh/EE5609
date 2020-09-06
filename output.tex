@@ -219,8 +219,6 @@ Transforming the matrix into row-echelon form \\
 }
 \end{align}
 Thus, The point of intersection is at point (2/26 , 5/13) i.e. (0.07, 0.38)\\
-
-
 let the equation of the line be
 \begin{align}
 \vec{n}^T\vec{x} = c \implies \vec{x}^T\vec{n} = c
@@ -233,56 +231,39 @@ Let the intercepts be a,b on the x and y axis respectively. Then,
 \begin{align} 
 \myvec{0 & b}\vec{n} = c
 \end{align}
-As the required line passes through the point of intersection (2/26, 5/13) and the intercepts are equal, the intercepts can be written as:
-\begin{align} 
-\myvec{6/13 & 0}\vec{n} = c
-\end{align}
-\\
-\begin{align} 
-\myvec{0 & 6/13}\vec{n} = c
-\end{align}
 resulting in the matrix equation
 \begin{equation}
-\myvec{6/13 & 0 \\ 0 & 6/13}\vec{n} = c \myvec{1 \\ 1}
-where
-\vec{n}= 
-\begin{pmatrix}
-	n_{11} \\ 
-	n_{12}
-\end{pmatrix} 
+\myvec{a & 0 \\ 0 & b}\vec{n} = c \myvec{1 \\ 1}
+\end{equation}
+As the intercepts are equal,Let a=b
+\begin{equation}
+\myvec{a & 0 \\ 0 & a}\vec{n} = c \myvec{1 \\ 1}
 \end{equation}
 \begin{equation}
- \implies
- \myvec{6/13 & 0 \\ 0 & 6/13}\begin{pmatrix}
-	n_{11} \\ 
-	n_{12}
-\end{pmatrix}
-= c \myvec{1 \\ 1}
+\vec{n} = \frac{c}{a}\myvec{1\\1} = \myvec{1\\1}
 \end{equation}
-upon substitution we get, 
-\begin{align}
-\frac{6}{13}n_{11}=c  \implies n_{11} = \frac{c}{6/13}
-\end{align}
-\begin{align}
-\frac{6}{13}n_{12}=c \implies n_{12} = \frac{c}{6/13}
-\end{align}
-
-So, the equation of line can be written as
+The equation of line is
 \begin{equation}
 	{\vec{n}^T}{\vec{x}} = c 
 \end{equation}
 \begin{equation}
+\implies
 \begin{pmatrix}
-	n_{11} & n_{12}
+	1 &\
+	1
 \end{pmatrix}
-\vec{x} = c\end{equation}
-\begin{align}
-\myvec{
-\frac{c}{6/13} &\
-\frac{c}{6/13}
-}
 	{\vec{x}} = c
-	\end{align}
+\end{equation}
+\begin{equation}
+\implies
+c= x+y 
+\end{equation}
+As the required line passes through the point of intersection (2/26, 5/13):
+\begin{equation}
+\implies c=\frac{2}{26}+\frac{5}{13}
+\implies c=\frac{6}{13}
+\end{equation}
+So, the equation of line can be written as
 \begin{equation}
 \implies
 \begin{pmatrix}
@@ -294,7 +275,7 @@ So, the equation of line can be written as
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{Assignment_1}
-  \caption{The intercepts of the required line are equal}
+ \caption{The intercepts of the required line are equal}
 \end{figure}
 \end{flushleft}
 \end{document}
