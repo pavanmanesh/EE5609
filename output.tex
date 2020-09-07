@@ -188,6 +188,10 @@ that has equal intercepts on the axes
 %
 %
 \section{Solution}
+The above two line equations can be expressed as the matrix equation
+\begin{align}
+\myvec{4 & 7\\2 & -3 }\textbf{x} = \myvec{3\\-1 }
+\end{align}
 \begin{flushleft}
 Constructing the augmented matrix \\
 $$
@@ -218,9 +222,15 @@ Transforming the matrix into row-echelon form \\
 0 & 1 & 5/13
 }
 \end{align}
+The solution for x can be written as 
+\begin{equation}
+\label{expk}
+\vec{x} = \myvec{2/26 \\ 5/13}
+\end{equation}
 Thus, The point of intersection is at point (2/26 , 5/13) i.e. (0.07, 0.38)\\
-let the equation of the line be
+Let the equation of the line be
 \begin{align}
+\label{equ}
 \vec{n}^T\vec{x} = c \implies \vec{x}^T\vec{n} = c
 \end{align}
 Let the intercepts be a,b on the x and y axis respectively. Then,
@@ -242,25 +252,20 @@ As the intercepts are equal,Let a=b
 \begin{equation}
 \vec{n} = \frac{c}{a}\myvec{1\\1} = \myvec{1\\1}
 \end{equation}
-The equation of line is
+As the line passes through point of intersection,We can use the equation \eqref{expk} in equation \eqref{equ} to find the value of c\\
 \begin{equation}
-	{\vec{n}^T}{\vec{x}} = c 
-\end{equation}
-\begin{equation}
-\implies
+c=
 \begin{pmatrix}
 	1 &\
 	1
 \end{pmatrix}
-	{\vec{x}} = c
+\begin{pmatrix}
+	\frac{2}{26} \\
+	\frac{2}{26}
+\end{pmatrix}
 \end{equation}
 \begin{equation}
-\implies
-c= x+y 
-\end{equation}
-As the required line passes through the point of intersection (2/26, 5/13):
-\begin{equation}
-\implies c=\frac{2}{26}+\frac{5}{13}
+\implies c=\frac{2}{26}+\frac{2}{26}
 \implies c=\frac{6}{13}
 \end{equation}
 So, the equation of line can be written as
