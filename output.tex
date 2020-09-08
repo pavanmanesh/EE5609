@@ -190,16 +190,16 @@
     \section{Solution}
     The above two line equations can be expressed as the matrix equation
     \begin{align}
-    \myvec{4 & 7\\2 & -3 }\textbf{x} = \myvec{3\\-1 }
+    \myvec{4 & 7\\2 & -3 }{\vec{x}} = \myvec{3\\-1 }
     \end{align}
     \begin{flushleft}
     Constructing the augmented matrix \\
-    $$
-    \begin{pmatrix}
-        4 & 7 & 3 \\ 
-        2 & -3 & -1
-    \end{pmatrix}
-    $$
+
+    \begin{align}
+    \myvec{4 & 7 & 3 \\ 
+        2 & -3 & -1 }
+    \end{align}
+
     Transforming the matrix into row-echelon form \\
     \begin{align}
     \myvec{
@@ -256,10 +256,8 @@
     \begin{equation}
     c=
     \myvec{1 & 1}
-    \begin{pmatrix}
-    	\frac{2}{26} \\
-    	\frac{2}{26}
-    \end{pmatrix}
+    \myvec{\frac{2}{26} \\  
+    	\frac{2}{26} }
     \end{equation}
     \begin{equation}
     \implies c=\frac{2}{26}+\frac{2}{26}
