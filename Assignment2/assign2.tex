@@ -184,29 +184,54 @@ https://github.com/pavanmanesh/EE5609/tree/master/Assignment2
 b&c&0
 } =0\label{eq:1}
 \end{align}
+\section{THEOREM FOR HOMOGENEOUS SYSTEMS}
+Theorem used for solving this problem:
+\begin{align} 
+A \vec{x} = \vec{0} \label{eq:2}
+\end{align}
+has a nontrivial solution if and only if \mydet{A }= 0 (i.e., A is singular).\\
 \section{SOLUTION}
-Proceeding to the solution by solving the determinant of  left hand side matrix of \eqref{eq:1} 
+Converting A into reduced echelon form:
 \begin{align}
-=0\mydet{
- 0&-c\\
- c&0\\
- }
- -a\mydet{
- -a&-c\\
- b&0\\
- }-b\mydet{
- -a&0\\
- b&c\\
- }
+\myvec{0 & a & -b \\-a & 0 & -c\\ b & c & 0}
+\xleftrightarrow[]{R_1\leftarrow R_2}
+\myvec{-a & 0 & -c\\0 & a & -b \\ b & c & 0}\\
+\xleftrightarrow[]{R_3\leftarrow a\times R_3+b\times R_1}   
+\myvec{-a & 0 & -c\\0 & a & -b \\ 0 & ac & -bc}\\
+\xleftrightarrow[]{R_3\leftarrow R_3-c\times R_2}
+\myvec{-a & 0 & -c\\0 & a & -b \\ 0 & 0 & 0}
+\end{align}
+Let A be the given matrix and x be a vector where x is \\
+\begin{align}
+\vec{x} =
+   \myvec{
+   x1 \\
+   x2 \\
+   x3
+    }
  \end{align}
+From \eqref{eq:2}, we can write the augmented form in this way:
 \begin{align}
-=0+-a(-(-bc))-b(-ac)
+\myvec{-a & 0 & -c & 0\\0 & a & -b & 0\\ 0 & 0 & 0 & 0}
 \end{align}
+upon solving the above , the value of  \vec{x}:
 \begin{align}
-=-abc+abc
-\end{align}
-\begin{align}
-=0
-\end{align}
-\\ Hence, the determinant is equal to 0.
+\vec{x} =
+   \myvec{
+   -\frac{c}{a} x3 \\
+   \frac{b}{a} x3\\
+   x3
+    }
+ \end{align}
+ \begin{align}
+\vec{x} =
+   \myvec{
+   -\frac{c}{a} \\
+   \frac{b}{a} \\
+    1
+    } x3
+ \end{align}
+\\ There exists a nontrivial solution for the given matrix. From the theorem \eqref{eq:2}, the determinant is equal to 0.
 \end{document}
+
+
