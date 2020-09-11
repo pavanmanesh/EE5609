@@ -184,12 +184,13 @@ https://github.com/pavanmanesh/EE5609/tree/master/Assignment2
 b&c&0
 } =0\label{eq:1}
 \end{align}
-\section{THEOREM FOR HOMOGENEOUS SYSTEMS}
-Theorem used for solving this problem:
+\section{PROPERTIES}
+Properties used for solving this problem:
 \begin{align} 
 A \vec{x} = \vec{0} \label{eq:2}
 \end{align}
-has a nontrivial solution if and only if \mydet{A }= 0 (i.e., A is singular).\\
+A has a zero eigen value if \vec{x} has a nontrivial solution.
+
 \section{SOLUTION}
 Converting A into reduced echelon form:
 \begin{align}
@@ -229,9 +230,16 @@ upon solving the above , the value of  \vec{x}:
    -c \\
    b \\
     a
-    } \frac{x3}{a}
+    } 
  \end{align}
-\\ There exists a nontrivial solution for the given matrix. From the theorem \eqref{eq:2}, the determinant is equal to 0.
+\\ From \eqref{eq:2}, one of the eigen value is equal to 0.We know that the determinant of a matrix is the product of the eigen values. so,if one of the values is zero , \mydet{A }= 0 (i.e., A is singular).So,
+\begin{align}
+\mydet{
+0&a&-b\\
+-a&0&c\\
+b&c&0
+} =0
+\end{align}
 \end{document}
 
 
