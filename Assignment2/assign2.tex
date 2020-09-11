@@ -232,14 +232,22 @@ upon solving the above , the value of  \vec{x}:
     a
     } 
  \end{align}
-\\ From \eqref{eq:2}, one of the eigen value is equal to 0.We know that the determinant of a matrix is the product of the eigen values. so,if one of the values is zero , \mydet{A }= 0 (i.e., A is singular).So,
+\\ From \eqref{eq:2},We can write that 
 \begin{align}
-\mydet{
-0&a&-b\\
--a&0&c\\
-b&c&0
-} =0
+\myvec{0 & a & -b \\-a & 0 & -c\\ b & c & 0}
+\myvec{
+   -c \\
+   b \\
+    a
+    } =\vec{0} 
+\end{align}    
+So,one of the eigen value is equal to 0.say\\
+\begin{align} 
+\lambda_1 =0 \label{eq:3}
 \end{align}
+We know that the
+\begin{align}
+\det(A) = \lambda_1 \lambda_2\cdots\lambda_n
+\end{align} 
+\\ From \eqref{eq:3}, \det(A)=0
 \end{document}
-
-
