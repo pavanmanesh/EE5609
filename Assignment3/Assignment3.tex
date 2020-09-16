@@ -152,7 +152,7 @@ columns=fullflexible
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{EE5609: Matrix Theory\\
-          Assignment-2\\}
+          Assignment-3\\}
 \author{M Pavan Manesh\\
 EE20MTECH14017 }
 \maketitle
@@ -162,7 +162,7 @@ EE20MTECH14017 }
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \begin{abstract}
-This document contains a solution for proving the determinant of the given matrix is zero. 
+This document contains a solution for showing that line AP bisects
 \end{abstract}
 Download the python codes from 
 %
@@ -186,10 +186,10 @@ bisects the angle between them.
     \item The lines $PB$ is the perpendicular to line $AB$ and 
     $PC$ is the perpendicular to line $AC$:
     \begin{align}
-    \myvec{\vec{P}-\vec{B}}\myvec{\vec{A}-\vec{B}}^T=0 \label{eq2.2}
+    \myvec{\vec{P}-\vec{B}}^T\myvec{\vec{A}-\vec{B}}=0 \label{eq2.2}
     \end{align}
     \begin{align}
-    \myvec{\vec{P}-\vec{C}}\myvec{\vec{A}-\vec{C}}^T=0 \label{eq2.3}
+    \myvec{\vec{P}-\vec{C}}^T\myvec{\vec{A}-\vec{C}}=0 \label{eq2.3}
     \end{align}
 \end{enumerate}
 We need to prove that the line  $AP$  bisects the angle between them \begin{align}
@@ -204,11 +204,11 @@ We need to prove that the line  $AP$  bisects the angle between them \begin{alig
 \end{align}
  From \eqref{eq2.2} and \eqref{eq2.3},We can write that
  \begin{align}
- \myvec{\vec{P}-\vec{B}}\myvec{\vec{A}-\vec{B}}^T=\myvec{\vec{P}-\vec{C}}\myvec{\vec{A}-\vec{C}}^T
+ \myvec{\vec{P}-\vec{B}}^T\myvec{\vec{A}-\vec{B}}=\myvec{\vec{P}-\vec{C}}^T\myvec{\vec{A}-\vec{C}}
  \end{align}
  using \eqref{eq2.2} , the above equation reduces to
  \begin{align}
- \myvec{\vec{A}-\vec{B}}^T=\myvec{\vec{A}-\vec{C}}^T  \label{eq2.5}
+ \myvec{\vec{A}-\vec{B}}=\myvec{\vec{A}-\vec{C}}  \label{eq2.5}
   \end{align}
   By using \eqref{eq2.5} in \eqref{eq2.4},We can say that the line $AP$ bisects the angle between them
   \begin{align}
