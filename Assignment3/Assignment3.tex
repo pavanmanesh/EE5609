@@ -2,6 +2,14 @@
 %
 \usepackage{setspace}
 \usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{tkz-euclide} 
+\usepackage{textcomp}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+
 %\doublespacing
 \singlespacing
 
@@ -53,6 +61,8 @@
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
+\usepackage{amsmath}
+\usepackage{cleveref}
 %\usepackage{enumerate}
 
 %\usepackage{wasysym}
@@ -82,9 +92,12 @@ columns=fullflexible
 %frame=single, 
 %breaklines=true
 %}
+\usepackage{graphicx}
+\usepackage{pgfplots}
 
 \begin{document}
-%
+
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
@@ -102,6 +115,9 @@ columns=fullflexible
 \bibliographystyle{IEEEtran}
 %\bibliographystyle{ieeetr}
 \providecommand{\mbf}{\mathbf}
+\providecommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\providecommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+\providecommand{\mean}[1]{\ensuremath{E\left[ #1 \right]}}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
 \providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
@@ -116,12 +132,9 @@ columns=fullflexible
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
-\providecommand{\abs}[1]{\left\vert#1\right\vert}
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
-\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
 %\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
-\providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
@@ -148,8 +161,7 @@ columns=fullflexible
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
      \def\centbox#1{\makebox[0in]{#1}}
-     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
-     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}}
 \vspace{3cm}
 \title{EE5609: Matrix Theory\\
           Assignment-3\\}
@@ -178,6 +190,12 @@ P is a point equidistant from two lines l and m
 intersecting at point A. Show that the line AP
 bisects the angle between them.
 \section{SOLUTION}
+ \begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{\input{figure.tex}}
+\caption{figure}
+\label{fig1}
+\end{figure}
 \begin{enumerate}
     \item Here, the following information is given:
     \begin{align}
@@ -187,12 +205,60 @@ bisects the angle between them.
     $PC$ is the perpendicular to line $AC$:
     \begin{align}
     \myvec{\vec{P}-\vec{B}}^T\myvec{\vec{A}-\vec{B}}=0 \label{eq2.2}
+    \implies \cos\angle PBA=0 
     \end{align}
     \begin{align}
     \myvec{\vec{P}-\vec{C}}^T\myvec{\vec{A}-\vec{C}}=0 \label{eq2.3}
+    \implies \cos\angle PCA=0 
     \end{align}
 \end{enumerate}
-We need to prove that the line  $AP$  bisects the angle between them \begin{align}
+We know that 
+\begin{align}
+\norm{\vec{P-A}}^2=(\vec{P}-\vec{A})^T(\vec{P}-\vec{A})
+\end{align}
+\begin{align}
+ \begin{split}
+(\vec{P}-\vec{A})^T(\vec{P}-\vec{A})=(\vec{P}-\vec{B}+\vec{B}-\vec{A})^T(\vec{P}-\vec{B}+\vec{B}-\vec{A})
+\end{split}
+\end{align}
+\begin{align}
+ \begin{split}
+\norm{\vec{P-A}}^2=\norm{\vec{P-B}}^2+\norm{\vec{B-A}}^2\\ 
++2\norm{\vec{A}-\vec{P}}\norm{\vec{B}-\vec{A}}\cos\angle PBA \\
+\end{split}
+\end{align}
+using \eqref{eq2.2}
+\begin{align}
+ \begin{split}
+ \implies \norm{\vec{P-A}}^2=\norm{\vec{P-B}}^2+\norm{\vec{B-A}}^2 \label{eq2.4} \\
+ \end{split}
+\end{align}
+Similarly
+\begin{align}
+ \begin{split}
+(\vec{P}-\vec{A})^T(\vec{P}-\vec{A})=(\vec{P}-\vec{C}+\vec{C}-\vec{A})^T(\vec{P}-\vec{C}+\vec{C}-\vec{A})
+\end{split}
+\end{align}
+\begin{align}
+ \begin{split}
+\norm{\vec{P-A}}^2=\norm{\vec{P-C}}^2+\norm{\vec{C-A}}^2\\ 
++2\norm{\vec{A}-\vec{P}}\norm{\vec{C}-\vec{A}}\cos\angle PCA \\
+\end{split}
+\end{align}
+using \eqref{eq2.3}
+\begin{align}
+ \begin{split}
+ \implies \norm{\vec{P-A}}^2=\norm{\vec{P-C}}^2+\norm{\vec{C-A}}^2 \label{eq2.5}
+ \end{split}
+\end{align}
+From \eqref{eq2.4} and \eqref{eq2.5} and substituting \eqref{eq2.1}
+\begin{align}
+\norm{\vec{P-C}}^2+\norm{\vec{C-A}}^2=\norm{\vec{P-B}}^2+\norm{\vec{B-A}}^2 \\
+\implies \norm{\vec{C-A}}^2=\norm{\vec{B-A}}^2
+\implies \norm{\vec{C-A}}=\norm{\vec{B-A}} \label{eq2.6}
+\end{align}
+We need to prove that the line  $AP$  bisects the angle between them
+\begin{align}
  & \angle BAP \enspace = \enspace \angle CAP \label{1} \\
  \implies &\cos\angle BAP \enspace = \enspace \cos\angle CAP \\
  &  \frac{(\vec A -\vec B)^T(\vec{A}-\vec{P})}{\norm{\vec{A}-\vec{B}} \norm{\vec{A}-\vec{P}} } \enspace = \enspace \frac{(\vec A -\vec C)^T(\vec{A}-\vec{P})}{\norm{\vec{A}-\vec{C}} \norm{\vec{A}-\vec{P}} }
@@ -200,17 +266,9 @@ We need to prove that the line  $AP$  bisects the angle between them \begin{alig
  This is reduced to
  \begin{align}
  \implies 
- \frac{(\vec A -\vec B)^T}{\norm{\vec{A}-\vec{B}}} \enspace = \enspace \frac{(\vec A -\vec C)^T}{\norm{\vec{A}-\vec{C}}} \label{eq2.4}
+ \frac{(\vec A -\vec B)^T}{\norm{\vec{A}-\vec{B}}} \enspace = \enspace \frac{(\vec A -\vec C)^T}{\norm{\vec{A}-\vec{C}}} \label{eq2.7}
 \end{align}
- From \eqref{eq2.2} and \eqref{eq2.3},We can write that
- \begin{align}
- \myvec{\vec{P}-\vec{B}}^T\myvec{\vec{A}-\vec{B}}=\myvec{\vec{P}-\vec{C}}^T\myvec{\vec{A}-\vec{C}}
- \end{align}
- using \eqref{eq2.2} , the above equation reduces to
- \begin{align}
- \myvec{\vec{A}-\vec{B}}=\myvec{\vec{A}-\vec{C}}  \label{eq2.5}
-  \end{align}
-  By using \eqref{eq2.5} in \eqref{eq2.4},We can say that the line $AP$ bisects the angle between them
+  By using \eqref{eq2.6} in \eqref{eq2.7},We can say that the both sides are equal. The line $AP$ bisects the angle between them
   \begin{align}
   \angle BAP \enspace = \enspace \angle CAP
   \end{align}
@@ -221,5 +279,4 @@ The Figure below shows the plot of given lines
 \caption{Plotting the lines}
 \end{figure}
 \end{document}
-
 
