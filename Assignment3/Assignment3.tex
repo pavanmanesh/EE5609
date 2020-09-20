@@ -257,13 +257,52 @@ From \eqref{eq2.4} and \eqref{eq2.5} and substituting \eqref{eq2.1}
 \implies \norm{\vec{C-A}}^2=\norm{\vec{B-A}}^2
 \implies \norm{\vec{C-A}}=\norm{\vec{B-A}} \label{eq2.6}
 \end{align}
-Using \eqref{eq2.1}, \eqref{eq2.2} and \eqref{eq2.6} and by RHS(Right angle – Hypotenuse – Side) property of congruence we can say that:-\\
+We know that 
 \begin{align}
-\triangle APB \cong \triangle APC \label{eq2.7}
+\norm{\vec{P-B}}^2=(\vec{P}-\vec{B})^T(\vec{P}-\vec{B})
 \end{align}
-From \eqref{eq2.7},
 \begin{align}
-\angle BAP \enspace = \enspace \angle CAP \label{eq2.8}
+ \begin{split}
+(\vec{P}-\vec{B})^T(\vec{P}-\vec{B})=(\vec{P}-\vec{A}+\vec{A}-\vec{B})^T(\vec{P}-\vec{A}+\vec{A}-\vec{B})
+\end{split}
 \end{align}
-From \eqref{eq2.8},We can say that the line $AP$ bisects the angle between them.
+\begin{align}
+ \begin{split}
+\norm{\vec{P-B}}^2=\norm{\vec{P-A}}^2+\norm{\vec{A-B}}^2\\ 
++2\norm{\vec{P}-\vec{A}}\norm{\vec{A}-\vec{B}}\cos\angle PAB \\ \label{eq2.7}
+\end{split}
+\end{align}
+Similarly
+\begin{align}
+\norm{\vec{P-C}}^2=(\vec{P}-\vec{C})^T(\vec{P}-\vec{C})
+\end{align}
+\begin{align}
+ \begin{split}
+(\vec{P}-\vec{C})^T(\vec{P}-\vec{C})=(\vec{P}-\vec{A}+\vec{A}-\vec{C})^T(\vec{P}-\vec{A}+\vec{A}-\vec{C})
+\end{split}
+\end{align}
+\begin{align}
+ \begin{split}
+\norm{\vec{P-C}}^2=\norm{\vec{P-A}}^2+\norm{\vec{A-C}}^2\\ 
++2\norm{\vec{P}-\vec{A}}\norm{\vec{A}-\vec{C}}\cos\angle PAC \\ \label{eq2.8}
+\end{split}
+\end{align}
+From \eqref{eq2.1},Equating \eqref{eq2.7} and \eqref{eq2.8}
+\begin{align}
+\begin{split}
+\norm{\vec{P-A}}^2+\norm{\vec{A-B}}^2 
++2\norm{\vec{P}-\vec{A}}\norm{\vec{A}-\vec{B}}\cos\angle PAB =\\
+\norm{\vec{P-A}}^2+\norm{\vec{A-C}}^2
++2\norm{\vec{P}-\vec{A}}\norm{\vec{A}-\vec{C}}\cos\angle PAC \\
+\end{split}
+\end{align}
+Using  \eqref{eq2.6} 
+\begin{align}
+\begin{split}
+2\norm{\vec{P}-\vec{A}}\norm{\vec{A}-\vec{B}}\cos\angle PAB =\\
+2\norm{\vec{P}-\vec{A}}\norm{\vec{A}-\vec{C}}\cos\angle PAC \\
+\implies \cos\angle PAB = \cos\angle PAC
+\end{split}
+\end{align}
+The line AP bisects the angle between them.
 \end{document}
