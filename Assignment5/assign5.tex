@@ -152,7 +152,7 @@ columns=fullflexible
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{EE5609: Matrix Theory\\
-          Assignment-4\\}
+          Assignment-5\\}
 \author{M Pavan Manesh\\
 EE20MTECH14017 }
 \maketitle
@@ -186,9 +186,9 @@ The general second degree equation can be expressed as follows,
 \end{align}
 From the given second degree equation we get,
 \begin{align}
-\vec{V} &= \myvec{3&-\sqrt{3}\\-\sqrt{3}&1}\\
-\vec{u} &= \myvec{3\\-2}\\
-f &= 5
+\vec{V} &= \myvec{3&-\sqrt{3}\\-\sqrt{3}&1}\\ \label{given1}
+\vec{u} &= \myvec{3\\-2}\\ 
+f &= 5 \label{given2}
 \end{align}
 Expanding the determinant of $\vec{V}$ we observe, 
 \begin{align}
@@ -217,7 +217,7 @@ The eigen vector $\vec{p}$ is defined as,
 for $\lambda_1=0$,
 \begin{align}
 \brak{\lambda_1\vec{I}-\vec{V}}&=\myvec{-3&\sqrt{3}\\\sqrt{3}&-1}\xleftrightarrow[R_1=\frac{1}{3}R_1]{R_2=\sqrt{3}R_2+R_1}\myvec{-1&\frac{1}{\sqrt{3}}\\0&0}\\
-\implies\vec{p_1}&=\myvec{\frac{1}{\sqrt{3}}\\1}
+\implies\vec{p_1}&=\myvec{\frac{1}{\sqrt{3}}\\1} \label{eq2.3}
 \end{align}
 Again, for $\lambda_2=4$,
 \begin{align}
@@ -240,8 +240,13 @@ The focal length of the parabola is given by:
 When $\mydet{\vec{V}}=0$,\eqref{eqmain} can be written as
 \begin{align}
     \vec{y^T}\vec{D}\vec{y}&=\eta\myvec{1&0}\vec{y}\label{eq2.4}
-    \intertext{And the center $\vec{c}$ is given by }
+    \intertext{And the vertex $\vec{c}$ is given by }
     \myvec{\vec{u^T}+\eta\vec{p_1^T} \\ \vec{V}}\vec{c}=
     \myvec{-f \\ \eta\vec{p_1}-\vec{u}} 
+\end{align}
+using equations \eqref{given1},\eqref{given2} and \eqref{eq2.3}
+\begin{align}
+    \myvec{5-\frac{4}{\sqrt{3}}& 2\sqrt{3}-6 \\ 3 & -\sqrt{3} \\  -\sqrt{3} & 1 }\vec{c}=\myvec{-5 \\ 2-\frac{7}{\sqrt{3}} \\ 
+    2\sqrt{3}-2 }
 \end{align}
 \end{document}
