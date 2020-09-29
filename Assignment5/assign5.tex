@@ -221,12 +221,12 @@ for $\lambda_1=0$,
 \end{align}
 Again, for $\lambda_2=4$,
 \begin{align}
-\brak{\lambda_2\vec{I}-\vec{V}}&=\myvec{1&\sqrt{3}\\\sqrt{3}&3}\xleftrightarrow[R_2=\frac{1}{\sqrt{3}}+R_1]{R_1=R_1}\myvec{1&\frac{1}{-\sqrt{3}}\\0&0}\\
-\implies\vec{p_2}=\myvec{\sqrt{3}\\1}
+\brak{\lambda_2\vec{I}-\vec{V}}&=\myvec{1&\sqrt{3}\\\sqrt{3}&3}\xleftrightarrow[R_2=\frac{R_2}{\sqrt{3}}R_1]{R_1=R_1}\myvec{1&\sqrt{3}\\0&0}\\
+\implies\vec{p_2}=\myvec{\sqrt{3}\\-1}
 \end{align}
 The matrix \vec{P},
 \begin{align}
-\vec{P}&=\myvec{\vec{p_1}&\vec{p_2}}=\myvec{\frac{1}{\sqrt{3}}&\sqrt{3}\\1&1} \\
+\vec{P}&=\myvec{\vec{p_1}&\vec{p_2}}=\myvec{\frac{1}{\sqrt{3}}&\sqrt{3}\\1&-1} \\
 \vec{D}&=\myvec{0&0\\0&4}
 \end{align}
 \begin{align}
@@ -246,7 +246,19 @@ When $\mydet{\vec{V}}=0$,\eqref{eqmain} can be written as
 \end{align}
 using equations \eqref{given1},\eqref{given2} and \eqref{eq2.3}
 \begin{align}
-    \myvec{5-\frac{4}{\sqrt{3}}& 2\sqrt{3}-6 \\ 3 & -\sqrt{3} \\  -\sqrt{3} & 1 }\vec{c}=\myvec{-5 \\ 2-\frac{7}{\sqrt{3}} \\ 
+    \myvec{5-\frac{4}{\sqrt{3}}& 2\sqrt{3}-6 \\ 3 & -\sqrt{3} \\  -\sqrt{3} & 1 }\vec{c}=\myvec{-5 \\ -1-\frac{4}{\sqrt{3}} \\ 
     2\sqrt{3}-2 }
+\end{align}
+\begin{align}
+ \myvec{5-\frac{4}{\sqrt{3}}& 2\sqrt{3}-6 & -5\\ 3 & -\sqrt{3} & -1-\frac{4}{\sqrt{3}}\\  -\sqrt{3} & 1 & 2\sqrt{3}-2 } 
+\xleftrightarrow[R_1=\frac{R_1}{5-\frac{4}{\sqrt{3}}}]{R_2=R_2-3R_1} \nonumber \\
+ \myvec{1& \frac{-66+6\sqrt{3}}{59} & \frac{-75-20\sqrt{3}}{59} \\ 0 &\frac{198-77\sqrt{3}}{59} & \frac{166}{59}-\frac{-56\sqrt{3}}{177}\\  -\sqrt{3} & 1 & 2\sqrt{3}-2 }  
+ \xleftrightarrow[R_2=\frac{R_2}{\frac{198-77\sqrt{3}}{59}}]{R_3=R_3+\sqrt{3}R_1} \nonumber \\
+ \myvec{1& \frac{-66+6\sqrt{3}}{59} & \frac{-75-20\sqrt{3}}{59} \\
+ 0 &1 & \frac{14\sqrt{3}+44}{33} \\
+ 0 & \frac{77-66\sqrt{3}}{59} & \frac{-178+43\sqrt{3}}{59}}  \xleftrightarrow[R_1=R_1-\frac{-66+6\sqrt{3}}R_2]{R_3=R_3-\frac{77-66\sqrt{3}}{59}R_2} \nonumber \\
+  \myvec{1& 0 & \frac{1}{11} \\
+ 0 &1 & \frac{14\sqrt{3}+44}{33} \\
+ 0 & 0 & \frac{-10+5\sqrt{3}}{3}} 
 \end{align}
 \end{document}
