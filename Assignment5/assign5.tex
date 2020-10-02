@@ -239,7 +239,7 @@ The focal length of the parabola is given by:
 \end{align}
 When $\mydet{\vec{V}}=0$,\eqref{eqmain} can be written as
 \begin{align}
-    \vec{y^T}\vec{D}\vec{y}&=\eta\myvec{1&0}\vec{y}\label{eq2.4}
+    \vec{y^T}\vec{D}\vec{y}&=-\eta\myvec{1&0}\vec{y}\label{eq2.4}
     \intertext{And the vertex $\vec{c}$ is given by }
     \myvec{\vec{u^T}+\eta\vec{p_1^T} \\ \vec{V}}\vec{c}=
     \myvec{-f \\ \eta\vec{p_1}-\vec{u}} 
@@ -247,7 +247,7 @@ When $\mydet{\vec{V}}=0$,\eqref{eqmain} can be written as
 using equations \eqref{given1},\eqref{given2} and \eqref{eq2.3}
 \begin{align}
     \myvec{5-\frac{4}{\sqrt{3}}& 2\sqrt{3}-6 \\ 3 & -\sqrt{3} \\  -\sqrt{3} & 1 }\vec{c}=\myvec{-5 \\ -1-\frac{4}{\sqrt{3}} \\ 
-    2\sqrt{3}-2 }
+    2\sqrt{3}-2 } \label{eqcen}
 \end{align}
 \begin{align}
  \myvec{5-\frac{4}{\sqrt{3}}& 2\sqrt{3}-6 & -5\\ 3 & -\sqrt{3} & -1-\frac{4}{\sqrt{3}}\\  -\sqrt{3} & 1 & 2\sqrt{3}-2 } 
@@ -261,4 +261,5 @@ using equations \eqref{given1},\eqref{given2} and \eqref{eq2.3}
  0 &1 & \frac{14\sqrt{3}+44}{33} \\
  0 & 0 & \frac{-10+5\sqrt{3}}{3}} 
 \end{align}
+We are not able to get the solution to  center satisfying \eqref{eqcen}.So, the center of the parabola is at infinity.
 \end{document}
