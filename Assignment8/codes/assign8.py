@@ -13,5 +13,4 @@ z2=complex(x2,y2)
 
 A = Matrix([[1,z],[2,2],[z1,z2]])
 print("Matrix A is",A)
-
 print("Row-Reduced form and pivot elements are",A.rref())
