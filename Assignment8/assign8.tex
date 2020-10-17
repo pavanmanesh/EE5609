@@ -177,30 +177,30 @@ https://github.com/pavanmanesh/EE5609/tree/master/Assignment8/codes
 \end{lstlisting}
 %
 \section{Problem}
-Find a row-reduced matrix which is row equivalent to,
+Find a row-reduced matrix which is row equivalent to A.What are the solutions of \vec{A}\vec{x}=\vec{0} ?
 \begin{align}
 \vec{A} = \myvec{1&-i\\2&2\\i& 1+i}\label{A}
 \end{align}
-What are the solutions of \vec{A}\vec{x}=\vec{0} ?
+
 \section{THEOREM}
 \begin{align}
 \intertext{Let R be a row-reduced echelon matrix which is row equivalent to A. Then the systems}
 A \vec{x} = \vec{0}, R \vec{x} = \vec{0} \label{th}\end{align}
 \intertext{have the same solutions.}
 \section{Solution}
-\textbf{Step 1}: Performing $R_2 \leftarrow R_2-2R_1$ and $R_3 \leftarrow R_3-iR_1$ given by elementary matrix $\vec{E_{31}E_{21}}$ on the equation \eqref{A},
+Multiplying the elementary matrix $\vec{E_{31}E_{21}}$ on the equation \eqref{A},
 \begin{align}
 \vec{E_{31}E_{21}} = \myvec{1&0&0\\-2&1&0\\-i&0&1}\\
 \vec{E_{31}E_{21}A} =   \myvec{1&0&0\\-2&1&0\\-i&0&1}\myvec{1&-i\\2&2\\i& 1+i}\\
 \implies\vec{A_1} = \vec{E_{31}E_{21}A} = \myvec{1&-i\\0&2+2i\\0&-i}\label{2}
 \end{align}
-\textbf{Step 2}: Performing $R_2\leftarrow \frac{1}{2+2i}R_2$ given by $\vec{A_1}$ on equation \eqref{2},
+ Let $\vec{D_1}$ be defined as 
 \begin{align}
 \vec{D_1} = \myvec{1&0&0\\0&\frac{1}{4}(1-i)&0\\0&0&1}\\
 \vec{D_1A_1} = \myvec{1&0&0\\0&\frac{1}{4}(1-i)&0\\0&0&1}\myvec{1&-i\\0&2+2i\\0&-i}\\
 \implies \vec{A_2}=\vec{D_1A_1} = \myvec{1&-i\\0&1\\0&-i}\label{3}
 \end{align}
-\textbf{Step 3}: Performing $R_3\leftarrow R_3+iR_2$ given by $\vec{E_{32}}$ on equation \eqref{3},
+Multiplying $\vec{E_{32}}$ on equation \eqref{3},
 \begin{align}
 \vec{E_{32}} = \myvec{1&0&0\\0&1&0\\0&i&1}
 \end{align}
@@ -210,7 +210,7 @@ A \vec{x} = \vec{0}, R \vec{x} = \vec{0} \label{th}\end{align}
 \begin{align}
 \implies \vec{A_3}=\vec{E_{32}A_2} = \myvec{1&-i\\0&1\\0&0}\label{4}
 \end{align}
-\textbf{Step 4}: Performing $R_1\leftarrow R_1+iR_2$ given by $\vec{E_{12}}$ on equation \eqref{4},
+Multiplying $\vec{E_{12}}$ on equation \eqref{4},
 \begin{align}
 \vec{E_{12}} = \myvec{1&i&0\\0&1&0\\0&0&1}
 \end{align}
@@ -224,8 +224,13 @@ $\therefore$ Row-reduced matrix of $\vec{A}$ given by equation \eqref{A} is,
 \begin{align}
 \vec{A} =  \myvec{1&-i\\2&2\\i&1+i}\xleftrightarrow[]{RREF}\myvec{1&0\\0&1\\0&0}\label{final}
 \end{align}
-From\eqref{th} and \eqref{final},the only solution of  A$\vec{x}=$\vec{0} is,
+From\eqref{th} and \eqref{final},
 \begin{align}
-    \vec{x}=\myvec{0 \\ 0}
+A\vec{x} = \myvec{1&0\\0&1\\0&0}\myvec{x_1\\x_2} = 0
+\end{align}
+The solution of  A$\vec{x}=$\vec{0} is,
+\begin{align}
+\vec{I_2} \vec{x} = 0\\
+\implies \vec{x} = 0
 \end{align}
 \end{document}
