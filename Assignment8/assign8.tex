@@ -188,39 +188,19 @@ Find a row-reduced matrix which is row equivalent to A.What are the solutions of
 A \vec{x} = \vec{0}, R \vec{x} = \vec{0} \label{th}\end{align}
 \intertext{have the same solutions.}
 \section{Solution}
-Multiplying the elementary matrix $\vec{E_{31}E_{21}}$ on the equation \eqref{A},
+On performing elementary row operations on $\eqref{A}$,
 \begin{align}
-\vec{E_{31}E_{21}} = \myvec{1&0&0\\-2&1&0\\-i&0&1}\\
-\vec{E_{31}E_{21}A} =   \myvec{1&0&0\\-2&1&0\\-i&0&1}\myvec{1&-i\\2&2\\i& 1+i}\\
-\implies\vec{A_1} = \vec{E_{31}E_{21}A} = \myvec{1&-i\\0&2+2i\\0&-i}\label{2}
+\vec{R}=\vec{B}\vec{A}
 \end{align}
- Let $\vec{D_1}$ be defined as 
+where $\vec{B}$ is the product of all elementary matrices. Reducing the given matrix, we get
 \begin{align}
-\vec{D_1} = \myvec{1&0&0\\0&\frac{1}{4}(1-i)&0\\0&0&1}\\
-\vec{D_1A_1} = \myvec{1&0&0\\0&\frac{1}{4}(1-i)&0\\0&0&1}\myvec{1&-i\\0&2+2i\\0&-i}\\
-\implies \vec{A_2}=\vec{D_1A_1} = \myvec{1&-i\\0&1\\0&-i}\label{3}
-\end{align}
-Multiplying $\vec{E_{32}}$ on equation \eqref{3},
-\begin{align}
-\vec{E_{32}} = \myvec{1&0&0\\0&1&0\\0&i&1}
+\vec{B}= 
+\myvec{1&i&0\\0&1&0\\0&0&1}\myvec{1&0&0\\0&1&0\\0&i&1}\myvec{1&0&0\\0&\frac{1}{4}(1-i)&0\\0&0&1}\myvec{1&0&0\\-2&1&0\\-i&0&1}
 \end{align}
 \begin{align}
-\vec{E_{32}A_2} = \myvec{1&0&0\\0&1&0\\0&i&1}\myvec{1&i\\0&1\\0&-i}
+\vec{R}=\myvec{1&0\\0&1\\0&0} \label{R}
 \end{align}
-\begin{align}
-\implies \vec{A_3}=\vec{E_{32}A_2} = \myvec{1&-i\\0&1\\0&0}\label{4}
-\end{align}
-Multiplying $\vec{E_{12}}$ on equation \eqref{4},
-\begin{align}
-\vec{E_{12}} = \myvec{1&i&0\\0&1&0\\0&0&1}
-\end{align}
-\begin{align}
-\vec{E_{12}A_3} =\myvec{1&i&0\\0&1&0\\0&0&1} \myvec{1&-i\\0&1\\0&0}
-\end{align}
-\begin{align}
-\implies \vec{A_4} = \vec{E_{12}A_3} = \myvec{1&0\\0&1\\0&0}\label{5}
-\end{align}
-$\therefore$ Row-reduced matrix of $\vec{A}$ given by equation \eqref{A} is,
+$\Therefore$ Row-reduced matrix of $\vec{A}$ is,
 \begin{align}
 \vec{A} =  \myvec{1&-i\\2&2\\i&1+i}\xleftrightarrow[]{RREF}\myvec{1&0\\0&1\\0&0}\label{final}
 \end{align}
@@ -233,4 +213,5 @@ The solution of  A$\vec{x}=$\vec{0} is,
 \vec{I_2} \vec{x} = 0\\
 \implies \vec{x} = 0
 \end{align}
+As $\vec{I_2}$ is invertible.
 \end{document}
