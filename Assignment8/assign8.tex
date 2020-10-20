@@ -164,7 +164,7 @@ EE20MTECH14017 }
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \begin{abstract}
-This document explains how to find a row-reduced matrix which is row equivalent to
+This document explains how to find a row-reduced matrix which is row equivalent to given matrix
 \end{abstract}
 Download all latex-tikz codes from 
 %
@@ -195,7 +195,11 @@ On performing elementary row operations on $\eqref{A}$,
 where $\vec{B}$ is the product of all elementary matrices. Reducing the given matrix, we get
 \begin{align}
 \vec{B}= 
-\myvec{1&i&0\\0&1&0\\0&0&1}\myvec{1&0&0\\0&1&0\\0&i&1}\myvec{1&0&0\\0&\frac{1}{4}(1-i)&0\\0&0&1}\myvec{1&0&0\\-2&1&0\\-i&0&1}
+\myvec{1&i&0\\0&1&0\\0&0&1}\myvec{1&0&0\\0&1&0\\0&-i&1}\myvec{1&0&0\\0&\frac{1}{4}(1-i)&0\\0&0&1}\myvec{1&0&0\\-2&1&0\\-i&0&1} 
+\end{align}
+\begin{align} \vec{B}= \myvec{\frac{1}{2}(1-i)&\frac{1}{4}(1+i)&0\\
+\frac{1}{2}(-1+i)&\frac{1}{4}(1-i)&0\\
+\frac{1}{2}(1-i)&\frac{1}{4}(-1-i)&1}
 \end{align}
 \begin{align}
 \vec{R}=\myvec{1&0\\0&1\\0&0} \label{R}
