@@ -148,40 +148,40 @@ Let $\mathbb{V}$ be a vector space which is spanned by the rows of matrix
 \end{align}
 \begin{enumerate}[label=\alph*.]
 \item Find a basis for $\mathbb{V}$
-\item Tell which vectors \myvec{x_1&x_2&x_3&x_4&x_5} are elements of $\mathbb{V}$ 
-\item If \myvec{x_1&x_2&x_3&x_4&x_5} is in $\mathbb{V}$ ,what are its coordinates in the basis chosen?
+\item Tell which vectors \myvec{x_1\\x_2\\x_3\\x_4\\x_5} are elements of $\mathbb{V}$ 
+\item If \myvec{x_1\\x_2\\x_3\\x_4\\x_5} is in $\mathbb{V}$ ,what are its coordinates in the basis chosen in part(a)?
 \end{enumerate}
 \section{Solution}
 Row reducing \eqref{eq:mat}
 \begin{align}
 \myvec{3&21&0&9&0\\1&7&-1&-2&-1\\2&14&0&6&1\\6&42&-1&13&0} \nonumber\\
 \xleftrightarrow[]{R_1\leftarrow\frac{R_1}{3}}
-\myvec{1&7&0&3&0\\1&7&-1&-2&-1\\2&14&0&6&1\\6&42&-1&13&0} \nonumber \\
-\xleftrightarrow[R_2\leftarrow R_2-R_1]{R_3\leftarrow R_3-2R_1}\myvec{1&7&0&3&0\\0&0&-1&-5&-1\\0&0&0&0&1\\0&0&-1&-5&0}  \nonumber\\
-\xleftrightarrow[]{R_4\leftarrow R_4-R_2}\myvec{1&7&0&3&0\\0&0&-1&-5&-1\\0&0&0&0&1\\0&0&0&0&1}  \nonumber
+\myvec{1&7&0&3&0\\1&7&-1&-2&-1\\2&14&0&6&1\\6&42&-1&13&0} \nonumber
 \end{align}
 \begin{align}
+\xleftrightarrow[R_2\leftarrow R_2-R_1]{R_3\leftarrow R_3-2R_1}\myvec{1&7&0&3&0\\0&0&-1&-5&-1\\0&0&0&0&1\\0&0&-1&-5&0}  \nonumber\\
+\xleftrightarrow[]{R_4\leftarrow R_4-R_2}\myvec{1&7&0&3&0\\0&0&-1&-5&-1\\0&0&0&0&1\\0&0&0&0&1}  \nonumber\\
 \xleftrightarrow[]{R_2\leftarrow -R_2}\myvec{1&7&0&3&0\\0&0&1&5&1\\0&0&0&0&1\\0&0&0&0&1}  \nonumber\\
 \xleftrightarrow[R_2\leftarrow R_2-R_3]{R_4\leftarrow R_4-R_3}\myvec{1&7&0&3&0\\0&0&1&5&1\\0&0&0&0&1\\0&0&0&0&0} \label{eq:rref}
 \end{align}
 \begin{enumerate}[label=\alph*.]
 \item For the basis of $\mathbb{V}$, we can take the non zero rows of \eqref{eq:rref} \\
 \begin{align}
-    \rho_1=\myvec{1&7&0&3&0} \\
-    \rho_2=\myvec{0&0&1&5&1}\\
-    \rho_3=\myvec{0&0&0&0&1}
+    \rho_1=\myvec{1\\7\\0\\3\\0} 
+    \rho_2=\myvec{0\\0\\1\\5\\1}
+    \rho_3=\myvec{0\\0\\0\\0\\1}
 \end{align}
 \item Vectors which are elements of $\mathbb{V}$  are of the form:
 \begin{align}
     c_1\rho_1+c_2\rho_2+c_3\rho_3 \nonumber\\
-    =\myvec{c_1&7c_1&c_2&3c_1+5c_2&c_3} \label{eq:vec}
+    =\myvec{c_1\\7c_1\\c_2\\3c_1+5c_2\\c_3} \label{eq:vec}
 \end{align}
 where $c_1$,$c_2$,$c_3$ are scalars.
-\item By \eqref{eq:vec},if \myvec{x_1&x_2&x_3&x_4&x_5} is in $\mathbb{V}$,it must be of the form
+\item By \eqref{eq:vec},if \myvec{x_1\\x_2\\x_3\\x_4\\x_5} is in $\mathbb{V}$,it must be of the form
 \begin{align}
     x_1\rho_1+x_3\rho_2+x_5\rho_3
 \end{align}
-The coordinates of \myvec{x_1&x_2&x_3&x_4&x_5} in the  basis is
+The coordinates of \myvec{x_1\\x_2\\x_3\\x_4\\x_5} in the  basis is
 \begin{align}
     \myvec{x_1\\x_3\\x_5}
 \end{align}
