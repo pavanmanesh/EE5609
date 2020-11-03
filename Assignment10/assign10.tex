@@ -133,7 +133,7 @@ EE20MTECH14017 }
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \begin{abstract}
-This document explains how to find the basis for the given vector space
+This document explains regarding the use of Cayley-Hamilton theorem
 \end{abstract}
 Download all latex-tikz codes from 
 %
@@ -142,29 +142,32 @@ https://github.com/pavanmanesh/EE5609/tree/master/Assignment10
 \end{lstlisting}
 %
 \section{Problem}
-For the linear operator T 
+For the linear operator $\vec{T}$
 \begin{align}
-    T\myvec{x_1\\x_2\\x_3}=\myvec{3x_1\\x_1-x_2\\2x_1+x_2+x_3}\label{eq:1}
+    \vec{T}\myvec{x_1\\x_2\\x_3}=\myvec{3x_1\\x_1-x_2\\2x_1+x_2+x_3}\label{eq:1}
 \end{align}
 Prove that
 \begin{align}
-    \vec(T^{2}-I)\vec(T-3I)=0
+    \vec(\vec{T}^{2}-I)\vec(\vec{T}-3I)=0
 \end{align}
 \section{Solution}
 Expressing \eqref{eq:1} in matrix form
 \begin{align}
-    T=\myvec{3&0&0\\1&-1&0\\2&1&1}\label{eq:2.1}\\
-\intertext{Using \eqref{eq:2.1},We can write that}
-    T^{2}=\myvec{3&0&0\\1&-1&0\\2&1&1}\myvec{3&0&0\\1&-1&0\\2&1&1}\nonumber\\\implies
-    T^{2}=\myvec{9&0&0\\2&1&0\\9&0&1}
-\end{align}
+    \vec{T}=\myvec{3&0&0\\1&-1&0\\2&1&1}\label{eq:2.1}
+\end{align}    
+The characteristic equation of $\vec{T}$ is given as follows,
 \begin{align}
-    T^{2}-I=\myvec{8&0&0\\2&0&0\\9&0&0} \label{eq:2}\\
-    T-3I=\myvec{0&0&0\\1&-4&0\\2&1&-2} \label{eq:3}
+\mydet{\vec{T}-\lambda\vec{I}} = \mydet{3-\lambda&0&0\\1&-1-\lambda&0\\2&1&1-\lambda} &= 0\\
+\implies -\lambda^3+3\lambda^2+\lambda-3&= 0 \label{eqchar}
 \end{align}
-From \eqref{eq:2} and \eqref{eq:3},
+By the Cayley-Hamilton theorem,We can write \eqref{eqchar} as
 \begin{align}
-    \vec(T^{2}-I)\vec(T-3I)=\myvec{8&0&0\\2&0&0\\9&0&0}\myvec{0&0&0\\1&-4&0\\2&1&-2}\nonumber
-    \\\implies \vec(T^{2}-I)\vec(T-3I)=\myvec{0&0&0\\0&0&0\\0&0&0}
+-\vec{T}^3+3\vec{T}^2+\vec{T}-3I&= 0 \\
+\implies \vec{T}^3-3\vec{T}^2-\vec{T}+3I&= 0 \label{eqchar1}
+\end{align}
+Rearranging \eqref{eqchar1}
+\begin{align}
+    \vec{T}^2\vec(\vec{T}-3I)-\vec(\vec{T}-3I)=0 \nonumber \\
+    \vec(\vec{T}^2-I)\vec(\vec{T}-3I)=0
 \end{align}
 \end{document}
