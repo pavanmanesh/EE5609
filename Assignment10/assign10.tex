@@ -158,16 +158,13 @@ Expressing \eqref{eq:1} in matrix form
 The characteristic equation of $\vec{T}$ is given as follows,
 \begin{align}
 \mydet{\vec{T}-\lambda\vec{I}} = \mydet{3-\lambda&0&0\\1&-1-\lambda&0\\2&1&1-\lambda} &= 0\\
-\implies -\lambda^3+3\lambda^2+\lambda-3&= 0 \label{eqchar}
+\implies(3-\lambda)(-1-\lambda)(1-\lambda)=0 \nonumber\\
+\implies(\lambda-3)(1+\lambda)(1-\lambda)=0 \nonumber\\
+\implies(\lambda-3)(1-\lambda^2)=0\nonumber\\
+\implies(\lambda^2-1)(\lambda-3)=0\label{eqchar}
 \end{align}
 By the Cayley-Hamilton theorem,We can write \eqref{eqchar} as
 \begin{align}
--\vec{T}^3+3\vec{T}^2+\vec{T}-3I&= 0 \\
-\implies \vec{T}^3-3\vec{T}^2-\vec{T}+3I&= 0 \label{eqchar1}
-\end{align}
-Rearranging \eqref{eqchar1}
-\begin{align}
-    \vec{T}^2\vec(\vec{T}-3I)-\vec(\vec{T}-3I)=0 \nonumber \\
     \vec(\vec{T}^2-I)\vec(\vec{T}-3I)=0
 \end{align}
 \end{document}
