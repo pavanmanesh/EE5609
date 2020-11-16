@@ -178,11 +178,12 @@ We can write \eqref{1} as
 \end{align}
 Starting with RHS of \eqref{eq:1}
 \begin{align}
-    \vec{T}(z_1)\vec{T}(z_2)= \myvec{\vec{A} & \vec{B}} (\vec{I} \otimes \vec{z_1})\myvec{\vec{A} & \vec{B}} (\vec{I} \otimes \vec{z_2})
+    \vec{T}(z_1)\vec{T}(z_2)= \myvec{\vec{A} & \vec{B}} (\vec{I} \otimes \vec{z_1})\myvec{\vec{A} & \vec{B}} (\vec{I} \otimes \vec{z_2}) \label{eq:1}
 \end{align}
-using \eqref{eq:eq_th},We can say that 
+If
 \begin{align}
-    (\vec{I} \otimes\vec{z_1}) (\vec{I} \otimes\vec{z_2})&=
-    \vec{I} \otimes (\vec{z_1} \vec{z_2})
+    (\vec{I} \otimes \vec{z_1})\myvec{\vec{A} & \vec{B}} (\vec{I} \otimes \vec{z_2})=(\vec{I} \otimes \vec{z_1z_2})
+    \intertext{then,we can write \eqref{eq:1} as }
+    \vec{T}(z_1)\vec{T}(z_2)=\myvec{\vec{A} & \vec{B}}(\vec{I} \otimes \vec{z_1z_2})=\vec{T}(z_1z_2)
 \end{align}
 \end{document}
