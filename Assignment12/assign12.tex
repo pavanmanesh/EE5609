@@ -142,30 +142,30 @@ https://github.com/pavanmanesh/EE5609/tree/master/Assignment12
 \end{lstlisting}
 %
 \section{Problem}
-Let m and n be positive integers and field $\vec{F}$.Let $f_1,$\dots$,f_m$ be linear functions in $F^n$.For $\alpha$ in $F^n$ define
+Let m and n be positive integers and field $\vec{F}$.Let $f_1,$\dots$,f_m$ be linear functions in $F^n$.For $\vec{\alpha}$ in $F^n$ define
 \begin{align}
-    T\alpha=(f_1(\alpha),\dots,f_m(\alpha)) \label{eq:main}
+    T\vec{\vec{\alpha}}=(f_1(\vec{\alpha}),\dots,f_m(\vec{\alpha})) \label{eq:main}
 \end{align}
 show that T is a linear transformation from $F^n$ into $F^m$.Then show that every linear transformation from $F^n$ into $F^m$ is of the above form ,for some $f_1,$\dots$,f_m$.
 \section{Solution}
-Let b,$\alpha$ $\in$ $F^n$ and a is a scalar
+Let \vec{b},$\vec{\alpha}$ $\in$ $F^n$ and a is a scalar
 \begin{align}
-    T(a\alpha+b)=(f_1(a\alpha+b),\dots,f_m(a\alpha+b)) \nonumber \\
-    =(a f_1(\alpha)+f_1(b),\dots,a f_m(\alpha)+f_m(b)) \nonumber \\
-    =a(f_1(\alpha),\dots,f_m(\alpha))+(f_1(b),\dots,f_m(b))\label{2.1}
+    T(a\vec{\alpha}+\vec{b})=(f_1(a\vec{\alpha}+\vec{b}),\dots,f_m(a\vec{\alpha}+\vec{b})) \nonumber \\
+    =(a f_1(\vec{\alpha})+f_1(\vec{b}),\dots,a f_m(\vec{\alpha})+f_m(\vec{b})) \nonumber \\
+    =a(f_1(\vec{\alpha}),\dots,f_m(\vec{\alpha}))+(f_1(\vec{b}),\dots,f_m(\vec{b}))\label{2.1}
 \end{align}
 The equation \eqref{2.1} can be written as 
 \begin{align}
-T(a\alpha+b)=aT(\alpha)+T(b)
+T(a\vec{\vec{\alpha}}+\vec{b})=aT(\vec{\vec{\alpha}})+T(\vec{b})
 \end{align} 
 So, T is a linear transformation.\\
-Let the matrix $A$ of order $m\times n$ represent any linear transformation $X \mapsto AX$ from $F^n$ into $F^m$. For i=1,\dots,m ,let
+Let the matrix $A$ of order $m\times n$ represent any linear transformation $\vec{X} \mapsto A\vec{X}$ from $F^n$ into $F^m$. For i=1,\dots,m ,let
 \begin{align}
     f_i(x_1,\dots,x_n)=\sum_{j=1}^nA_{ij}x_j
 \end{align}
-The transformation into $F^m$, $AX$ can be written as 
+The transformation into $F^m$, $A\vec{X}$ can be written as 
 \begin{align}
-   (f_1(X),\dots,f_m(X))
+   (f_1(\vec{X}),\dots,f_m(\vec{X}))
 \end{align}
 This is of the form \eqref{eq:main}
 \end{document}
