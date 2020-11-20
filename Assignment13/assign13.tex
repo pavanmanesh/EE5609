@@ -1,0 +1,178 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{EE5609: Matrix Theory\\
+          Assignment-13\\}
+\author{M Pavan Manesh\\
+EE20MTECH14017 }
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/pavanmanesh/EE5609/tree/master/Assignment13
+\end{lstlisting}
+%
+\section{Problem}
+Let $\vec{M} =\{\vec{A}=\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z} $ and eigen values of $\vec{A}$ $\in$ $\mathbb{Q}$$\}$ \label{main}
+\begin{enumerate}
+    \item $\vec{M}$ is empty
+    \item $\vec{M} =\{\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z} \}$
+    \item If $\vec{A}$ $\in$ $\vec{M}$ then the eigen values of $\vec{A}$ $\in$ $\mathbb{Z}$
+    \item If $\vec{A}$,$\vec{B}$ $\in$ $\vec{M}$ such that $\vec{A} \vec{B}$=$\vec{I}$ then $\mydet{\vec{A}}$ $\in$ \{+1,-1\}
+\end{enumerate}
+\section{Solution}
+\subsection{Option 1}
+Consider $\vec{A}$=$\vec{I}$=\myvec{1&0\\0&1}.\\The elements of $\vec{A}$ $\in$ $\mathbb{Z}$ and it's eigen values 1 $\in$ $\mathbb{Q}$.\\
+So, $\vec{M}$ is not empty.
+\subsection{Option 2}
+Let $\vec{A}$=\myvec{0&-1\\1&0} where elements of $\vec{A}$ $\in$ $\mathbb{Z}$\\
+The characteristic equation can be written as
+\begin{align}
+    \lambda^2+1 &= 0 \implies \lambda = \pm i
+\end{align}
+We see that $\lambda$ $\in$ $\mathbb{C}$ which is contradicting to the definition of $\vec{M}$ .So,this option is not correct.
+\subsection{Option 3}
+Let $\lambda_1$,$\lambda_2$ be the eigen values of $\vec{A}$.The characteristic polynomial can be written as:
+\begin{align}
+    \lambda^2- tr\brak{\vec{A}}\lamda+\det{\vec{A}}=0 \label{eq:1} \intertext{where}
+    tr\brak{\vec{A}}=\lambda_1+\lambda_2,\det{\vec{A}}=\lambda_1\lambda_2\nonumber
+\end{align}
+Given the eigen values $\lambda\_1$,$\lambda\_2$  $\in$ $\mathbb{Q}$,For this to be possible the discriminant of equation \eqref{eq:1} should $\in$ $\mathbb{Z}$
+\begin{align}
+    \sqrt{(\lambda_1+\lambda_2)^2-4\lambda_1\lambda_2} \in \mathbb{Z} \nonumber \\
+    \sqrt{(\lambda_1-\lambda_2)^2} \in \mathbb{Z} \nonumber \\\lambda_1-\lambda_2 \in \mathbb{Z} \nonumber
+\end{align}
+This is possible when both $\lambda_1$,$\lambda_2$ $\in$ $\mathbb{Z}$.
+\subsection{Option 4}
+As $\vec{A}$,$\vec{B}$ $\in$ $\vec{M}$ \implies \mydet{\vec{A}},\mydet{\vec{B}} $\in$ $\mathbb{Z}$ \\
+Given $\vec{A}\vec{B}$=$\vec{I}$ \implies $\mydet{\vec{A}}\mydet{\vec{B}}$=1\\
+$This is possible only when \mydet{\vec{A}}$=$\mydet{\vec{B}}$= $\pm$ 1 \\
+\section{Conclusion}
+The correct options would be 3 and 4. 
+\end{document}
