@@ -1,15 +1,17 @@
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
-
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
 \usepackage{setspace}
 \usepackage{gensymb}
-
 \singlespacing
-
-
 \usepackage[cmex10]{amsmath}
-
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
 \usepackage{amsthm}
-
+\usepackage{mdframed}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -29,12 +31,7 @@
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-\newcommand\myemptypage{
-	\null
-	\thispagestyle{empty}
-	\addtocounter{page}{-1}
-	\newpage
-}
+\usepackage{graphicx}
 \usepackage{tkz-euclide}
 
 \usetikzlibrary{calc,math}
@@ -71,7 +68,7 @@ breaklines=true,
 columns=fullflexible
 }
 \begin{document}
-
+\onecolumn
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
@@ -85,6 +82,8 @@ columns=fullflexible
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -128,22 +127,19 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{EE5609: Matrix Theory\\
-          Assignment-13\\}
-\author{M Pavan Manesh\\
-EE20MTECH14017 }
+\title{Assignment 13}
+\author{M Pavan Manesh - EE20MTECH14017}
 \maketitle
-\newpage
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-Download all latex-tikz codes from 
+%
+Download the latex-tikz codes from 
 %
 \begin{lstlisting}
 https://github.com/pavanmanesh/EE5609/tree/master/Assignment13
 \end{lstlisting}
-%
-\section{Problem}
+\section{\textbf{Problem}}
 Let $\vec{M}$ =$\cbrak{\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z} \text{ and eigen values of} \vec{A} \in \mathbb{Q}}$ \label{main}
 \begin{enumerate}
     \item $\vec{M}$ is empty
@@ -151,10 +147,8 @@ Let $\vec{M}$ =$\cbrak{\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z} \text{ and eige
     \item If $\vec{A}$ $\in$ $\vec{M}$ then the eigen values of $\vec{A}$ $\in$ $\mathbb{Z}$
     \item If $\vec{A}$,$\vec{B}$ $\in$ $\vec{M}$ such that $\vec{A} \vec{B}$=$\vec{I}$ then $\mydet{\vec{A}}$ $\in$ \{+1,-1\}
 \end{enumerate}
-\section{Solution}
-\pagebreak
-\myemptypage
-\begin{longtable}{|l|l|}
+\section{\textbf{Solution}}
+	\begin{longtable}{|l|l|}
 	\hline
 	\multirow{3}{*}{$\vec{M}$ is empty} & \\
 	& Consider $\vec{A}$=$\vec{I}$=\myvec{1&0\\0&1}.The elements of $\vec{A}$ $\in$ $\mathbb{Z}$ and it's eigen values 1 $\in$ $\mathbb{Q}$.\\
@@ -164,7 +158,9 @@ Let $\vec{M}$ =$\cbrak{\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z} \text{ and eige
 	\multirow{3}{*}{$\vec{M}$ =\cbrak{\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z}}} & \\
 	& Let $\vec{A}$=\myvec{0&-1\\1&0} where elements of $\vec{A}$ $\in$ $\mathbb{Z}$.The characteristic equation can be \\ 
 	& written as :\\
+	& \\
 	& \qquad \qquad \qquad$ \lambda^2+1 = 0 \implies \lambda = \pm i$ \\
+	& \\
 	& We see that $\lambda$ $\in$ $\mathbb{C}$ which is contradicting the main definition of $\vec{M}$ .So,this \\
 	& is not correct. \\
 	& \\
@@ -172,7 +168,9 @@ Let $\vec{M}$ =$\cbrak{\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z} \text{ and eige
 	\multirow{3}{*}{Eigen values of $\vec{A}$ $\in$ $\mathbb{Z}$} & \\
 	& Given ,$\vec{A}$ $\in$ $\vec{M}$.Let $\lambda_1$,$\lambda_2$ be the eigen values of $\vec{A}$.The characteristic polynomial \\ 
 	&can be written as:\\
-	& \qquad \qquad \qquad$\lambda^2- tr\brak{\vec{A}}\lamda+\det{\vec{A}}=0$,where $tr\brak{\vec{A}}=\lambda_1+\lambda_2,\det{\vec{A}}=\lambda_1\lambda_2$\\ 
+	& \\
+	& \qquad \qquad \qquad$ \lambda^2-tr\brak{\vec{A}}\lambda +\det{\vec{A}}= 0 $ where $tr\brak{\vec{A}}=\lambda_1+\lambda_2,\det{\vec{A}}=\lambda_1\lambda_2$\\
+	& \\
 	& Given the eigen values $\lambda\_1$,$\lambda\_2$  $\in$ $\mathbb{Q}$,For this to be possible the discriminant \\
 	& of above equation should $\in$ $\mathbb{Z}$\\
 	& \qquad \qquad \qquad$\sqrt{(\lambda_1+\lambda_2)^2-4\lambda_1\lambda_2} \in \mathbb{Z}$ \\
@@ -191,6 +189,6 @@ Let $\vec{M}$ =$\cbrak{\myvec{a&b\\c&d} : a,b,c,d \in \mathbb{Z} \text{ and eige
 	\multirow{3}{*}{Conclusion} & \\
 	& options 3) and 4) are correct.\\
     & \\
-    \hline
-\end{longtable}
+	\hline
+    \end{longtable}
 \end{document}
