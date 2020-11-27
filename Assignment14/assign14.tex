@@ -150,11 +150,36 @@ Let $\vec{T}$ be the linear operator on a $n-$ dimensional vector space $\vec{V}
     &only if there exists an basis of $\vec{V}$, consisting of eigen vectors of $\vec{T}$ \\ 
 	&\\
 	\hline
-	\multirow{3}{*}{Eigen vectors}
+	\multirow{3}{*}{Theorem}
 	& \\
 	& If $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are eigenvectors of a linear operator $\vec{T}$ with distinct eigen\\
 	& values $\lambda_1,\lambda_2,\dots,\lambda_k$,then $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are linearly independent.
 	\\
+	&\\
+	&Let $a_1$,$a_2$,\dots,$a_k$ be the scalars such that \\
+	& \quad \quad\quad$a_1\vec{v}_1+a_2\vec{v}_2+\dots+a_k\vec{v}_k=0$ \qquad \qquad \dots \brak{1}\\
+	&\\
+	& Applying $\vec{T}$ on both sides , we get\\
+	& \quad \quad\quad $\vec{T}$($a_1\vec{v}_1+a_2\vec{v}_2+\dots+a_k\vec{v}_k)$=0
+	\\
+	& \qquad  $\implies a_1\vec{T}(\vec{v}_1)+ a_2\vec{T}(\vec{v}_2)+\dots+a_k\vec{T}(\vec{v}_k)$=0\\
+	&\\
+	& As $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are eigen vectors 
+	$\implies \vec{T}(\vec{v}_i)$=$\lambda_i\vec{v}_i$ for i=1,\dots,k\\
+	& \quad $\implies a_1\lambda_1\vec{v}_1+a_2\lambda_2\vec{v}_2+\dots+a_k\lambda_k\vec{v}_k=0$ \qquad \dots \brak{2}\\
+	&\\
+	& Multiplying \brak{1} by $\lambda_k$,we get\\
+	& \quad \quad\quad$a_1\lambda_k\vec{v}_1+a_2\lambda_k\vec{v}_2+\dots+a_k\lambda_k\vec{v}_k=0$ \qquad \dots \brak{3}\\ 
+	&\\
+    & Subtracting \brak{3} and \brak{2},we get \\
+    &\quad \quad\quad$a_1(\lambda_1-\lambda_k)\vec{v}_1+a_2(\lambda_2-\lambda_k)\vec{v}_2+\dots+a_k(\lambda_{k-1}-\lambda_k)\vec{v}_{k-1}=0$\\
+    & As $\lambda_1,\lambda_2,\dots,\lambda_k$ are distinct \\
+    & \qquad$\implies \lambda_i-\lambda_k \neq 0$ for i=1,2,..,k-1\\
+    & So,We can say that \\
+    &\quad\quad$a_1=a_2=\dots=a_{k-1}=0$\\
+    &\\
+    & Substituting this in $\brak{1}$, we get $a_k=0$\\
+    & As $a_1=a_2=\dots=a_k=0$,We can say that $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are linearly independent \\
     & \\
     \hline
 \end{longtable}
