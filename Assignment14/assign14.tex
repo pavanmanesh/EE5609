@@ -156,29 +156,31 @@ Let $\vec{T}$ be the linear operator on a $n-$ dimensional vector space $\vec{V}
 	& values $\lambda_1,\lambda_2,\dots,\lambda_k$,then $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are linearly independent.
 	\\
 	&\\
-	&Let $\vec{v_1}$ and $\vec{v_2}$ be the eigen vectors corresponding to eigen values $\lambda_1$ and $\lambda_2$\\
-	&\quad$\implies \vec{T}(\vec{v}_1)$=$\lambda_1\vec{v}_1, \vec{T}(\vec{v}_2)$=$\lambda_2\vec{v}_2$\\	
+	&Let $S_k=\cbrak{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k}$.Let $P(k): S_k$ is linearly independent.$S_1$ is linearly independent.\\
+	&So,$P(1)$ holds.Assume $P(k)$ holds for $1 \le k \le n$.Therefore,$S_k$ is linearly independent.\\
 	&\\
-	&Let the linear combination of two eigen vectors be \\
-	& \quad \quad\quad$a_1\vec{v}_1+a_2\vec{v}_2=0$ \qquad \qquad \dots \brak{1}\\
+	& Let $\sum_{i=1}^{k+1} a_i\vec{v}_i = 0 \quad \dots \brak{1}$\\	
 	& Applying $\vec{T}$ on both sides , we get\\
-	& \quad \quad\quad $\vec{T}$($a_1\vec{v}_1+a_2\vec{v}_2)$=0
+	& \quad \quad\quad $\vec{T}$($\sum_{i=1}^{k+1} a_i\vec{v}_i)$=0
 	\\
-	& \qquad  $\implies a_1\vec{T}(\vec{v}_1)+ a_2\vec{T}(\vec{v}_2)$=0\\
-	& \quad $\implies a_1\lambda_1\vec{v}_1+a_2\lambda_2\vec{v}_2=0$  \qquad \dots\brak{2}\\
+	& \quad  $\implies \sum_{i=1}^{k+1}a_i\vec{T}(\vec{v}_i)$=0\\
+	& \quad $\implies \sum_{i=1}^{k+1}a_i\lambda_i\vec{v}_i=0$ \\
+	& \quad$\implies\sum_{i=1}^{k}a_i\lambda_i\vec{v}_i+a_{k+1}\lambda_{k+1}\vec{v}_{k+1}=0\dots\brak{2}$\\
 	&\\
-	& Multiplying \brak{1} by $\lambda_1$,we get\\
-	& \quad \quad\quad$a_1\lambda_1\vec{v}_1+a_2\lambda_1\vec{v}_2=0$ \qquad \dots \brak{3}\\ 
+	& Multiplying \brak{1} by $\lambda_{k+1}$,we get\\
+	& \quad \quad\quad$\lambda_{k+1}(\sum_{i=1}^{k+1} a_i\vec{v}_i)=0$ \\ 
+	& \quad $\implies \sum_{i=1}^{k+1}a_i\lambda_{k+1}\vec{v}_i=0$ \\
+	& \quad$\implies\sum_{i=1}^{k}a_i\lambda_{k+1}\vec{v}_i+a_{k+1}\lambda_{k+1}\vec{v}_{k+1}=0\dots\brak{3}$\\
 	&\\
     & Subtracting \brak{2} and \brak{3},we get \\
-    &\quad \quad\quad$a_2(\lambda_2-\lambda_1)\vec{v}_2=0$\\
-    & As $\lambda_1,\lambda_2$ are distinct \\
-    & \qquad$\implies \lambda_2-\lambda_1 \neq 0$\\
-    & So,We can say that \\
-    &\quad\quad$a_2=0$\\
-    & Substituting this in $\brak{1}$, we get $a_1=0$\\
-    & Therefore $\vec{v}_1,\vec{v}_2$ are linearly independent \\
-    & By induction ,for n distinct eigen values $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_n$ are linearly independent.\\
+    & \quad $\implies \sum_{i=1}^{k}a_i(\lambda_i-\lambda_{k+1})\vec{v}_i=0$ \\
+    & As $\lambda_i$ are distinct $\forall i \le k, a_i = 0$ \\
+    & Substituting this in $\brak{1}$\\
+    &\quad$\sum_{i=1}^{k+1} a_i\vec{v}_i = 0$\\
+    &\quad$\implies a_{k+1}\vec{v}_{k+1} = 0$\\
+    & As $\vec{v}_{k+1} \neq 0 \implies a_{k+1}=0$ \\
+    &Since $\forall i \le k+1, a_i = 0,S_{k+1}$ is linearly independent\\
+    & By principle of mathematic induction, $S_n$ is linearly independent.\\
     & \\
     \hline
 \end{longtable}
