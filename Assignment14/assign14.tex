@@ -153,31 +153,33 @@ Let $\vec{T}$ be the linear operator on a $n-$ dimensional vector space $\vec{V}
 	\hline
 	\multirow{3}{*}{Theorem}
 	& \\
-	& If $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are eigenvectors of a linear operator $\vec{T}$ with distinct eigen\\
-	& values $\lambda_1,\lambda_2,\dots,\lambda_k$,then $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are linearly independent.
-	\\
-	&\\
-	&Let $S_k=\cbrak{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k}$.Let $P(k): S_k$ is linearly independent.$S_1$ is linearly independent.\\
-	&So,$P(1)$ holds.Assume $P(k)$ holds for $1 \le k \le n$.Therefore,$S_k$ is linearly independent.\\
-	&\\
-	& Let $\sum_{i=1}^{k+1} a_i\vec{v}_i = 0 \quad \dots \brak{1}$\\	
-	& Applying $\vec{T}$ on both sides , we get\\
-	& \quad \quad\quad $\vec{T}$($\sum_{i=1}^{k+1} a_i\vec{v}_i)$=0
-	\\
-	& \quad  $\implies \sum_{i=1}^{k+1}a_i\vec{T}(\vec{v}_i)$=0\\
-	& \quad $\implies \sum_{i=1}^{k+1}a_i\lambda_i\vec{v}_i=0$ \\
-	& \quad$\implies\sum_{i=1}^{k}a_i\lambda_i\vec{v}_i+a_{k+1}\lambda_{k+1}\vec{v}_{k+1}=0\dots\brak{2}$\\
-	&\\
-	& Multiplying \brak{1} by $\lambda_{k+1}$,we get\\
-	& \quad \quad\quad$\lambda_{k+1}(\sum_{i=1}^{k+1} a_i\vec{v}_i)=0$ \\ 
-	& \quad $\implies \sum_{i=1}^{k+1}a_i\lambda_{k+1}\vec{v}_i=0$ \\
-	& \quad$\implies\sum_{i=1}^{k}a_i\lambda_{k+1}\vec{v}_i+a_{k+1}\lambda_{k+1}\vec{v}_{k+1}=0\dots\brak{3}$\\
-    & Subtracting \brak{2} and \brak{3},we get \\
-    & \quad $\implies \sum_{i=1}^{k}a_i(\lambda_i-\lambda_{k+1})\vec{v}_i=0$ \\
-    & As $\lambda_i$ are distinct $\forall i \le k, a_i = 0$ \\
-    & Substituting this in $\brak{1}$\\
-    &\quad$\sum_{i=1}^{k+1} a_i\vec{v}_i = 0$\\
-    &\quad$\implies a_{k+1}\vec{v}_{k+1} = 0$\\
+&If $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are eigenvectors of a linear operator $\vec{T}$ with distinct eigen\\
+& values $\lambda_1,\lambda_2,\dots,\lambda_k$,then $\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k$ are linearly independent.\\
+&\\
+&Let $S_k=\cbrak{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k}$.Let $P(k): S_k$ is linearly independent.$S_1$ is linearly independent.\\
+&So,$P(1)$ holds.Assume $P(k)$ holds for $1 \le k \le n$.Therefore,$S_k$ is linearly independent.\\
+&\parbox{10cm}{\begin{align}
+\text{Let} \sum_{i=1}^{k+1} a_i\vec{v}_i = 0 \label{1}\\
+\text{Applying $\vec{T}$ on both sides , we get} \nonumber\\
+\implies \vec{T}(\sum_{i=1}^{k+1} a_i\vec{v}_i)=0\\
+\implies \sum_{i=1}^{k+1}a_i\vec{T}(\vec{v}_i)=0\\
+\implies \sum_{i=1}^{k+1}a_i\lambda_i\vec{v}_i=0\\
+\implies\sum_{i=1}^{k}a_i\lambda_i\vec{v}_i+a_{k+1}\lambda_{k+1}\vec{v}_{k+1}=0
+\label{2}\\
+\text{Multiplying \eqref{1} by $\lambda_{k+1}$,we get} \nonumber\\
+\lambda_{k+1}(\sum_{i=1}^{k+1} a_i\vec{v}_i)=0\\
+\implies \sum_{i=1}^{k+1}a_i\lambda_{k+1}\vec{v}_i=0
+\end{align}}\\
+\hline
+&\parbox{10cm}{\begin{align}
+\implies\sum_{i=1}^{k}a_i\lambda_{k+1}\vec{v}_i+a_{k+1}\lambda_{k+1}\vec{v}_{k+1}=0\label{3}\\
+\text{Subtracting \eqref{2} and \eqref{3},we get} \nonumber \\
+ \sum_{i=1}^{k}a_i(\lambda_i-\lambda_{k+1})\vec{v}_i=0\\
+ \text{As $\lambda_i$ are distinct $\forall i \le k, a_i = 0$}\\
+ \text{Substituting this in \eqref{1}} \nonumber \\
+ \sum_{i=1}^{k+1} a_i\vec{v}_i = 0\\
+ \implies a_{k+1}\vec{v}_{k+1} = 0
+\end{align}}\\
     & As $\vec{v}_{k+1} \neq 0 \implies a_{k+1}=0$ \\
     &Since $\forall i \le k+1, a_i = 0.S_{k+1}$ is linearly independent\\
     & By principle of mathematic induction, $S_n$ is linearly independent.\\
