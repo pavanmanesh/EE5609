@@ -178,7 +178,7 @@ True or false? If the triangular matrix $\vec{A}$ is similar to a diagonal matri
 	&invertible matrix $\vec{P}$ such that\\
 	&\parbox{10cm}
 	{\begin{align}
-	\vec{A}=\Vec{P}\vec{B}\vec{P}^{-1}
+    \vec{B}=\vec{P}^{-1}\vec{A}\vec{P}
 	\end{align}}\\
 	&\\
     \hline
@@ -205,6 +205,7 @@ True or false? If the triangular matrix $\vec{A}$ is similar to a diagonal matri
 	&\\
 	\hline
 	\multirow{3}{*}{Characteristic polynomial}
+	&\\
     &\parbox{10cm}
 	{\begin{align}
 	\mydet{x\Vec{I}-\Vec{A}}=\mydet{x-1&2\\0&x-3}\\
@@ -212,19 +213,50 @@ True or false? If the triangular matrix $\vec{A}$ is similar to a diagonal matri
 	\end{align}}\\
 	&\\
 	\hline
-	 & \\
 	\multirow{3}{*}{Minimal polynomial}
+	&\\
 	&As the eigen values are distinct,minimal polynomial\\
     &\parbox{10cm}
 	{\begin{align}
 	m\brak{x}=\brak{x-1}\brak{x-3}
 	\end{align}}\\
 	&\\
-		\hline
-	 & \\
+	\hline
 	\multirow{3}{*}{Diagonalizable}
+	&\\
 	&From theorem \eqref{eq:1},We can say that $\vec{A}$ diagonalizable i.e.,\\
 	&it is similar to a diagnol matrix.\\
+	&\\
+	\hline
+	\multirow{3}{*}{Finding matrix similar to $\vec{A}$}
+	&\\
+	&The eigen values are \\
+	&\parbox{10cm}
+	{\begin{align}
+	\lambda_1=1,\lambda_2=3
+	\end{align}}\\
+	&The eigen vectors are\\
+	&\parbox{10cm}
+	{\begin{align}
+	\brak{\vec{A}-\lambda_i\vec{I}}\vec{x_i}=0\\
+	\lambda_1=1
+	\implies \myvec{0&2\\0&2}\vec{x_1}=\myvec{0\\0}
+	\implies \vec{x_1}=\myvec{1\\0}\\
+	\lambda_2=3
+	\implies \myvec{-2&2\\0&0}\vec{x_2}=\myvec{0\\0}
+	\implies \vec{x_2}=\myvec{1\\1}
+	\end{align}}\\
+	& The invertible matrix\\
+	&\parbox{10cm}
+	{\begin{align}
+	\vec{P}=\myvec{\vec{x_1} &\vec{x_2}}=\myvec{1&1\\0&1}
+	\end{align}}\\
+	&The diagnol matrix similar to $\vec{A}$\\
+	&\parbox{10cm}
+	{\begin{align}
+	\vec{B}=\vec{P}^{-1}\vec{A}\vec{P}=\myvec{1&-1\\0&1}\myvec{1&2\\0&3}\myvec{1&1\\0&1}\\
+	\vec{B}=\myvec{1&0\\0&3}
+	\end{align}}\\
 	&\\
     \hline
 	\multirow{3}{*}{Conclusion} & \\
@@ -232,7 +264,7 @@ True or false? If the triangular matrix $\vec{A}$ is similar to a diagonal matri
 	& given conditions.So, given statement is false.\\
 	& \\
 	\hline
-	\caption{Finding minimal polynomial and solution}
+	\caption{Finding minimal polynomial and similar matrix}
     \label{table:2}
 \end{longtable}
 \end{document}
