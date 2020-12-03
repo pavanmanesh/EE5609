@@ -1,0 +1,266 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 17}
+\author{M Pavan Manesh - EE20MTECH14017}
+\maketitle
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%
+Download the latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/pavanmanesh/EE5609/tree/master/Assignment17
+\end{lstlisting}
+\section{\textbf{Problem}}
+Consider the quadratic forms on $\mathbb{R}^2$
+\begin{align}
+    Q_{1}(x,y)=xy,Q_{2}(x,y)=x^2+2xy+y^2,Q_{3}(x,y)=x^2+3xy+2y^2 \nonumber
+\end{align}
+Choose the correct statements from below
+\begin{enumerate}
+\item $Q_{1}$ and $Q_{2}$ are equivalent
+\item $Q_{1}$ and $Q_{3}$ are equivalent
+\item $Q_{2}$ and $Q_{3}$ are equivalent
+\item All are equivalent
+\end{enumerate}
+\section{\textbf{Definitions}}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+	\hline
+	\multirow{3}{*}{Matrix representation} 
+	& \\
+	& The Matrix representation of quadratic forms\\
+	&\parbox{10cm}
+	{\begin{align}
+	Q(x,y) = ax^2+2bxy+cy^2=\myvec{x&y}\myvec{a&b\\b&c}\myvec{x\\y} =\vec{X}^{T}\vec{A}\vec{X}\label{eq:1}
+	\end{align}}\\
+	&The symmetric matrix of the quadratic form is\\
+	&\parbox{10cm}
+	{\begin{align}
+	\vec{A}=\myvec{a&b\\b&c}
+	\end{align}}\\ 
+	&\\
+	\hline
+	\multirow{3}{*}{Equivalent condition} 
+	&\\
+	& Two quadratic forms $\vec{X}^{T}\vec{A}\vec{X}$ and $\vec{Y}^{T}\vec{B}\vec{Y}$ are called equivalent if their matrices,\\
+	& A and B are congruent.\\
+	&\\
+	& Two real quadratic forms are equivalent over the real field iff they have\\
+	& the same rank and the same index.\\
+	&\\
+    \hline
+    \multirow{3}{*}{Rank} 
+	&\\
+	& The rank of a quadratic form is the rank of its associated matrix.\\
+	&\\
+	\hline
+    \multirow{3}{*}{Index} 
+	&\\
+	& The index of the quadratic form is equal to the number of positive eigen\\ &values of the matrix of quadratic form.\\
+	&\\
+    \hline
+    \caption{Definitions and results used}
+    \label{table:1}
+\end{longtable}
+\newpage
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|l|l|}
+	\hline
+	\multirow{3}{*}{Given} & \\
+	& $ Q_{1}(x,y)=xy,Q_{2}(x,y)=x^2+2xy+y^2,Q_{3}(x,y)=x^2+3xy+2y^2$\\
+    & \\
+    \hline
+	\multirow{3}{*}{Matrix representation}
+	& \\
+	& The corresponding matrices for the quadratic forms are:\\
+	&\parbox{10cm}
+	{\begin{align}
+	\vec{A}_1=\myvec{0&\frac{1}{2}\\\frac{1}{2}&0},
+	\vec{A}_2=\myvec{1&1\\1&1},
+	\vec{A}_3=\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}
+	\end{align}}\\
+	&\\
+	\hline
+	\multirow{3}{*}{Finding Parameters of $\vec{A}_1$}
+	&\\
+    &\parbox{10cm}
+	{\begin{align}
+	\text{rank}(\vec{A}_1)=2 \nonumber\\
+	\mydet{\Vec{A}_1-\lambda\Vec{I}}=\mydet{-\lambda&\frac{1}{2}\\\frac{1}{2}&-\lambda}=0\\
+	\implies\brak{\lambda-\frac{1}{2}}\brak{\lambda+\frac{1}{2}}=0\\
+	\implies \lambda_1=\frac{1}{2},\lambda_2=-\frac{1}{2}\\
+	\text{Index of $\vec{A}_1$}  =1 \nonumber
+	\end{align}}\\
+	&\\
+	\hline
+	\multirow{3}{*}{Finding Parameters of $\vec{A}_2$}
+	&\\
+    &\parbox{10cm}
+	{\begin{align}
+	\myvec{1&1\\1&1}\xleftrightarrow[]{R_2\leftarrow R_2-R_1}\myvec{1&1\\0&0}\\
+	\text{rank}(\vec{A}_2)=1 \nonumber\\
+	\mydet{\Vec{A}_2-\lambda\Vec{I}}=\mydet{1-\lambda&1\\1&1-\lambda}=0\\
+	\implies\brak{\lambda}\brak{\lambda-2}=0\\
+	\implies \lambda_1=0,\lambda_2=2\\
+	\text{Index of $\vec{A}_2$}=2 \nonumber
+	\end{align}}\\
+	&\\
+	\hline
+	\multirow{3}{*}{Finding Parameters of $\vec{A}_3$}
+	&\\
+    &\parbox{10cm}
+	{\begin{align}
+	\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}
+	\xleftrightarrow[]{R_2\leftarrow R_2-\frac{3}{2} R_1}
+	\myvec{1&\frac{3}{2}\\0&-\frac{1}{4}}
+	\xleftrightarrow[R_2\leftarrow -4R_2]{R_1\leftarrow R_1+6R_2}\\
+	\myvec{1&0\\0&1}\\
+	\text{rank}(\vec{A}_3)=2 \nonumber\\
+	\mydet{\Vec{A}_2-\lambda\Vec{I}}=\mydet{1-\lambda&\frac{3}{2}\\\frac{3}{2}&2-\lambda}=0\\
+	\implies\brak{\lambda-\frac{\sqrt{10}+3}{2}}\brak{\lambda+\frac{\sqrt{10}-3}{2}}=0
+	\end{align}}\\
+	&\parbox{10cm}
+	{\begin{align}
+	\implies \lambda_1=\frac{3+\sqrt{10}}{2},\lambda_2=\frac{3-\sqrt{10}}{2}\\
+	\text{Index of $\vec{A}_3$}=1 \nonumber
+	\end{align}}\\
+	&\\
+    \hline
+	\multirow{3}{*}{Conclusion} & \\
+	& From above,we can say that $Q_{1}$ and $Q_{3}$ are equivalent.\\
+	& \\
+	\hline
+	\caption{Finding which quadratic forms are equivalent}
+    \label{table:2}
+\end{longtable}
+\end{document}
