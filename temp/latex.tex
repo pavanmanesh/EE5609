@@ -1,22 +1,17 @@
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
 \usepackage{setspace}
 \usepackage{gensymb}
-%\doublespacing
 \singlespacing
-
-%\usepackage{graphicx}
-%\usepackage{amssymb}
-%\usepackage{relsize}
 \usepackage[cmex10]{amsmath}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
-%\usepackage{wasysym}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
 \usepackage{amsthm}
-%\usepackage{iithtlc}
+\usepackage{mdframed}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -24,11 +19,10 @@
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
-%\usepackage{xtab}
+
 \usepackage{longtable}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{steinmetz}
@@ -37,9 +31,9 @@
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-%\usepackage{stmaryrd}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
 \usetikzlibrary{calc,math}
 \usepackage{listings}
     \usepackage{color}                                            %%
@@ -49,16 +43,12 @@
     \usepackage{multirow}                                         %%
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
-%\usepackage{enumerate}
 
-%\usepackage{wasysym}
-%\newcounter{MYtempeqncnt}
 \DeclareMathOperator*{\Res}{Res}
-%\renewcommand{\baselinestretch}{2}
+
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
@@ -67,7 +57,7 @@
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
 
-% correct bad hyphenation here
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
@@ -77,14 +67,9 @@ frame=single,
 breaklines=true,
 columns=fullflexible
 }
-%\lstset{
-%language=tex,
-%frame=single, 
-%breaklines=true
-%}
-
 \begin{document}
-%
+\onecolumn
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
@@ -92,15 +77,13 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-%\newtheorem{thm}{Theorem}[section] 
-%\newtheorem{defn}[thm]{Definition}
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \bibliographystyle{IEEEtran}
-%\bibliographystyle{ieeetr}
+\raggedbottom
+\setlength{\parindent}{0pt}
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -131,88 +114,151 @@ columns=fullflexible
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-\newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
-
-%\numberwithin{equation}{section}
 \numberwithin{equation}{subsection}
-%\numberwithin{problem}{section}
-%\numberwithin{definition}{section}
 \makeatletter
 \@addtoreset{figure}{problem}
 \makeatother
 \let\StandardTheFigure\thefigure
 \let\vec\mathbf
-%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 \renewcommand{\thefigure}{\theproblem}
-%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
-%\counterwithin{equation}{enumi}
-%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
      \def\centbox#1{\makebox[0in]{#1}}
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{EE5609: Matrix Theory\\
-          Assignment-8\\}
-\author{M Pavan Manesh\\
-EE20MTECH14017 }
+\title{Assignment 17}
+\author{M Pavan Manesh - EE20MTECH14017}
 \maketitle
-\newpage
-%\tableofcontents
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-\begin{abstract}
-This document explains how to find the basis for the given vector space
-\end{abstract}
-Download all latex-tikz codes from 
+%
+Download the latex-tikz codes from 
 %
 \begin{lstlisting}
-https://github.com/pavanmanesh/EE5609/tree/master/Assignment
+https://github.com/pavanmanesh/EE5609/tree/master/Assignment17
 \end{lstlisting}
-%
-\section{Problem}
-Let $\mathbb{V}$ be a vector space which is spanned by the rows of matrix
+\section{\textbf{Problem}}
+Consider the quadratic forms on $\mathbb{R}^2$
 \begin{align}
-    \vec{A} = \myvec{3&21&0&9&0\\1&7&-1&-2&-1\\2&14&6&0&1\\6&42&-1&13&0}\label{eq:mat}
+    Q_{1}(x,y)=xy,Q_{2}(x,y)=x^2+2xy+y^2,Q_{3}(x,y)=x^2+3xy+2y^2 \nonumber
 \end{align}
-\begin{enumerate}[label=\alph*.]
-\item Find a basis for $\mathbb{V}$
-\item Tell which vectors \myvec{x_1&x_2&x_3&x_4&x_5} are elements of $\mathbb{V}$ 
-\item If \myvec{x_1&x_2&x_3&x_4&x_5} is in $\mathbb{V}$ ,what are its coordinates in the basis chosen?
+Choose the correct statements from below
+\begin{enumerate}
+\item $Q_{1}$ and $Q_{2}$ are equivalent
+\item $Q_{1}$ and $Q_{3}$ are equivalent
+\item $Q_{2}$ and $Q_{3}$ are equivalent
+\item All are equivalent
 \end{enumerate}
-\section{Solution}
-Row reducing \eqref{eq:mat}
-\begin{align}
-\myvec{3&21&0&9&0\\1&7&-1&-2&-1\\2&14&6&0&1\\6&42&-1&13&0} \nonumber\\
-\xleftrightarrow[]{R_1\leftarrow\frac{R_1}{3}}
-\myvec{1&7&0&3&0\\1&7&-1&-2&-1\\2&14&6&0&1\\6&42&-1&13&0} \nonumber \\
-\xleftrightarrow[R_2\leftarrow R_2-R_1]{R_3\leftarrow R_3-2R_1}\myvec{1&7&0&3&0\\0&0&-1&-5&-1\\0&0&0&0&1\\0&0&-1&-5&0}  \nonumber\\
-\xleftrightarrow[]{R_4\leftarrow R_4-R_2}\myvec{1&7&0&3&0\\0&0&-1&-5&-1\\0&0&0&0&1\\0&0&0&0&1}  \nonumber\\
-\xleftrightarrow[]{R_2\leftarrow -R_2}\myvec{1&7&0&3&0\\0&0&1&5&1\\0&0&0&0&1\\0&0&0&0&1}  \nonumber\\
-\xleftrightarrow[R_2\leftarrow R_2-R_3]{R_4\leftarrow R_4-R_3}\myvec{1&7&0&3&0\\0&0&1&5&1\\0&0&0&0&1\\0&0&0&0&0} \label{eq:rref}
-\end{align}
-\begin{enumerate}[label=\alph*.]
-\item For the basis of $\mathbb{V}$, we can take the non zero rows of \eqref{eq:rref} \\
-\begin{align}
-    \rho_1=\myvec{1&7&0&3&0} \\
-    \rho_2=\myvec{0&0&1&5&1}\\
-    \rho_3=\myvec{0&0&0&0&1}
-\end{align}
-\item Vectors which are elements of $\mathbb{V}$  are of the form
-\begin{align}
-    c_1\rho_1+c_2\rho_2+c_3\rho_3 \nonumber\\
-    =\myvec{c_1&7c_1&c_2&3c_1+5c_2&c_3} \label{eq:vec}
-\end{align}
-where $c_1$,$c_2$,$c_3$ are scalars.
-\item By \eqref{eq:vec},if \myvec{x_1&x_2&x_3&x_4&x_5} is in $\mathbb{V}$,it must be of the form
-\begin{align}
-    x_1\rho_1+x_3\rho_2+x_5\rho_3
-\end{align}
-The coordinates of \myvec{x_1&x_2&x_3&x_4&x_5} in the  basis is
-\begin{align}
-    \myvec{x_1\\x_3\\x_5}
-\end{align}
-\end{enumerate}
+\section{\textbf{Definitions}}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+	\hline
+	\multirow{3}{*}{Matrix representation} 
+	& \\
+	& The Matrix representation of quadratic forms\\
+	&\parbox{10cm}
+	{\begin{align}
+	Q(x,y) = ax^2+2bxy+cy^2=\myvec{x&y}\myvec{a&b\\b&c}\myvec{x\\y} =\vec{X}^{T}\vec{A}\vec{X}\label{eq:1}
+	\end{align}}\\
+	&The symmetric matrix of the quadratic form is\\
+	&\parbox{10cm}
+	{\begin{align}
+	\vec{A}=\myvec{a&b\\b&c}
+	\end{align}}\\ 
+	&\\
+	\hline
+	\multirow{3}{*}{Equivalent condition} 
+	&\\
+	& Two quadratic forms $\vec{X}^{T}\vec{A}\vec{X}$ and $\vec{Y}^{T}\vec{B}\vec{Y}$ are called equivalent if their matrices,\\
+	& A and B are congruent.\\
+	&\\
+	& Two real quadratic forms are equivalent over the real field iff they have\\
+	& the same rank and the same index.\\
+	&\\
+    \hline
+    \multirow{3}{*}{Rank} 
+	&\\
+	& The rank of a quadratic form is the rank of its associated matrix.\\
+	&\\
+	\hline
+    \multirow{3}{*}{Index} 
+	&\\
+	& The index of the quadratic form is equal to the number of positive eigen\\ &values of the matrix of quadratic form.\\
+	&\\
+    \hline
+    \caption{Definitions and results used}
+    \label{table:1}
+\end{longtable}
+\renewcommand{\thetable}{2}
+\section{\textbf{Solution}}
+\begin{table*}[ht]
+\begin{center}
+\centering
+\begin{tabular}{|l|l|l|l|} 
+\hline
+    & $Q_{1}(x,y)$ & $Q_{2}(x,y)$ & $Q_{3}(x,y)$  \\ 
+\hline
+Matrix Representation   & $\vec{A}_1=\myvec{0&\frac{1}{2}\\\frac{1}{2}&0}$                                     & $\vec{A}_2=\myvec{1&1\\1&1}$                                                         & $\vec{A}_3=\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}$                                     \\ 
+\hline
+Finding Rank       
+& \begin{tabular}[c]{@{}l@{}}
+\\
+$\myvec{0&\frac{1}{2}\\\frac{1}{2}&0}\xleftrightarrow[R_2\leftarrow R_1]{R_1\leftarrow R_2}
+\myvec{\frac{1}{2}&0\\0&\frac{1}{2}}$\\
+\\
+$\xleftrightarrow[R_2\leftarrow 2R_2]{R_1\leftarrow 2R_1}
+\myvec{1&0\\0&1}$
+\end{tabular}  
+& \begin{tabular}[c]{@{}l@{}}
+    $\myvec{1&1\\1&1}\xleftrightarrow[]{R_2\leftarrow R_2-R_1}\myvec{1&1\\0&0}$\\
+\end{tabular}
+& \begin{tabular}[c]{@{}l@{}}
+\\
+$\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}
+\xleftrightarrow[]{R_2\leftarrow R_2-\frac{3}{2} R_1}
+\myvec{1&\frac{3}{2}\\0&-\frac{1}{4}}$\\
+\\
+$\xleftrightarrow[R_2\leftarrow -4R_2]{R_1\leftarrow R_1+6R_2}
+\myvec{1&0\\0&1}$
+\end{tabular}  \\
+\hline
+Rank      & $\text{rank}(\vec{A}_1)=2$                                                           & $\text{rank}(\vec{A}_2)=1$                                                           & $\text{rank}(\vec{A}_3)=2$                                                          \\ 
+\hline
+Finding Eigen values      
+& \begin{tabular}[c]{@{}l@{}}
+$\mydet{\Vec{A}_1-\lambda\Vec{I}}=0$\\
+$\implies\mydet{-\lambda&\frac{1}{2}\\\frac{1}{2}&-\lambda}=0$\\
+$\implies\brak{\lambda-\frac{1}{2}}\brak{\lambda+\frac{1}{2}}=0$\\
+$\implies \lambda_1=\frac{1}{2},\lambda_2=-\frac{1}{2}$
+\\
+\end{tabular} 
+& \begin{tabular}[c]{@{}l@{}}
+$\mydet{\Vec{A}_2-\lambda\Vec{I}}=0$\\
+$\implies\mydet{1-\lambda&1\\1&1-\lambda}=0$
+\\$\implies\brak{\lambda}\brak{\lambda-2}=0$
+\\$\implies \lambda_1=0,\lambda_2=2$
+\\
+\end{tabular}
+& \begin{tabular}[c]{@{}l@{}}
+$\mydet{\Vec{A}_3-\lambda\Vec{I}}=0$\\
+$\implies\mydet{1-\lambda&\frac{3}{2}\\\frac{3}{2}&2-\lambda}=0$\\
+$\implies\brak{\lambda-\frac{\sqrt{10}+3}{2}}\brak{\lambda+\frac{\sqrt{10}-3}{2}}=0$\\
+$\implies \lambda_1=\frac{3+\sqrt{10}}{2},\lambda_2=\frac{3-\sqrt{10}}{2}$\\
+\end{tabular}      
+\\ 
+\hline
+Index
+& \text{Index of $\vec{A}_1$}  =1
+& \text{Index of $\vec{A}_2$}=2
+& \text{Index of $\vec{A}_3$}=1                                                  \\ 
+\hline
+Conclusion & \multicolumn{3}{l|}{}From above,we can say $Q_{1}$ and $Q_{3}$ are equivalent.\\
+\hline
+\end{tabular}
+\caption{Finding which quadratic forms are equivalent}
+    \label{table:2}
+\end{center}
+\end{table*}
 \end{document}
