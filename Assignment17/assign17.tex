@@ -191,76 +191,71 @@ Choose the correct statements from below
     \caption{Definitions and results used}
     \label{table:1}
 \end{longtable}
-\newpage
 \section{\textbf{Solution}}
+\bigskip
 \renewcommand{\thetable}{2}
-\begin{longtable}{|l|l|}
-	\hline
-	\multirow{3}{*}{Given} & \\
-	& $ Q_{1}(x,y)=xy,Q_{2}(x,y)=x^2+2xy+y^2,Q_{3}(x,y)=x^2+3xy+2y^2$\\
-    & \\
-    \hline
-	\multirow{3}{*}{Matrix representation}
-	& \\
-	& The corresponding matrices for the quadratic forms are:\\
-	&\parbox{10cm}
-	{\begin{align}
-	\vec{A}_1=\myvec{0&\frac{1}{2}\\\frac{1}{2}&0},
-	\vec{A}_2=\myvec{1&1\\1&1},
-	\vec{A}_3=\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}
-	\end{align}}\\
-	&\\
-	\hline
-	\multirow{3}{*}{Finding Parameters of $\vec{A}_1$}
-	&\\
-    &\parbox{10cm}
-	{\begin{align}
-	\text{rank}(\vec{A}_1)=2 \nonumber\\
-	\mydet{\Vec{A}_1-\lambda\Vec{I}}=\mydet{-\lambda&\frac{1}{2}\\\frac{1}{2}&-\lambda}=0\\
-	\implies\brak{\lambda-\frac{1}{2}}\brak{\lambda+\frac{1}{2}}=0\\
-	\implies \lambda_1=\frac{1}{2},\lambda_2=-\frac{1}{2}\\
-	\text{Index of $\vec{A}_1$}  =1 \nonumber
-	\end{align}}\\
-	&\\
-	\hline
-	\multirow{3}{*}{Finding Parameters of $\vec{A}_2$}
-	&\\
-    &\parbox{10cm}
-	{\begin{align}
-	\myvec{1&1\\1&1}\xleftrightarrow[]{R_2\leftarrow R_2-R_1}\myvec{1&1\\0&0}\\
-	\text{rank}(\vec{A}_2)=1 \nonumber\\
-	\mydet{\Vec{A}_2-\lambda\Vec{I}}=\mydet{1-\lambda&1\\1&1-\lambda}=0\\
-	\implies\brak{\lambda}\brak{\lambda-2}=0\\
-	\implies \lambda_1=0,\lambda_2=2\\
-	\text{Index of $\vec{A}_2$}=2 \nonumber
-	\end{align}}\\
-	&\\
-	\hline
-	\multirow{3}{*}{Finding Parameters of $\vec{A}_3$}
-	&\\
-    &\parbox{10cm}
-	{\begin{align}
-	\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}
-	\xleftrightarrow[]{R_2\leftarrow R_2-\frac{3}{2} R_1}
-	\myvec{1&\frac{3}{2}\\0&-\frac{1}{4}}
-	\xleftrightarrow[R_2\leftarrow -4R_2]{R_1\leftarrow R_1+6R_2}\\
-	\myvec{1&0\\0&1}\\
-	\text{rank}(\vec{A}_3)=2 \nonumber\\
-	\mydet{\Vec{A}_3-\lambda\Vec{I}}=\mydet{1-\lambda&\frac{3}{2}\\\frac{3}{2}&2-\lambda}=0\\
-	\implies\brak{\lambda-\frac{\sqrt{10}+3}{2}}\brak{\lambda+\frac{\sqrt{10}-3}{2}}=0
-	\end{align}}\\
-	&\parbox{10cm}
-	{\begin{align}
-	\implies \lambda_1=\frac{3+\sqrt{10}}{2},\lambda_2=\frac{3-\sqrt{10}}{2}\\
-	\text{Index of $\vec{A}_3$}=1 \nonumber
-	\end{align}}\\
-	&\\
-    \hline
-	\multirow{3}{*}{Conclusion} & \\
-	& From above,we can say that $Q_{1}$ and $Q_{3}$ are equivalent.\\
-	& \\
-	\hline
-	\caption{Finding which quadratic forms are equivalent}
-    \label{table:2}
-\end{longtable}
+\begin{table}[ht]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{} &
+  \textbf{Matrix} &
+  \textbf{Rank} &
+  \textbf{Eigen Values} &
+  \textbf{Index} \\ \hline
+$Q_{1}(x,y)$ &
+  \multicolumn{1}{c|}{$\vec{A}_1=\myvec{0&\frac{1}{2}\\\frac{1}{2}&0}$} &
+  \begin{tabular}[c]{@{}l@{}}
+  $\myvec{0&\frac{1}{2}\\\frac{1}{2}&0}\xleftrightarrow[R_2\leftarrow R_1]{R_1\leftarrow R_2}
+  \myvec{\frac{1}{2}&0\\0&\frac{1}{2}}$\\
+\\
+  $\text{rank}(\vec{A}_1)=2$
+  \\
+  \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}
+$\quad \quad\mydet{\Vec{A}_1-\lambda\Vec{I}}=0$\\ \\
+$\implies\mydet{-\lambda&\frac{1}{2}\\\frac{1}{2}&-\lambda}=0$\\ \\
+$\implies\brak{\lambda-\frac{1}{2}}\brak{\lambda+\frac{1}{2}}=0$\\
+\\
+$\implies \lambda_1=\frac{1}{2},\lambda_2=-\frac{1}{2}$
+\\  \end{tabular} &
+ $\text{Index of $\vec{A}_1$}  =1$ \\ \hline
+$Q_{2}(x,y)$ &
+  $\vec{A}_2=\myvec{1&1\\1&1}$ &
+  \begin{tabular}[c]{@{}l@{}}
+  $\myvec{1&1\\1&1}\xleftrightarrow[]{R_2\leftarrow R_2-R_1}\myvec{1&1\\0&0}$\\
+  \\
+  $\text{rank}(\vec{A}_2)=1$
+  \\
+  \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}
+  $\quad \quad\mydet{\Vec{A}_2-\lambda\Vec{I}}=0$\\ \\
+$\implies\mydet{1-\lambda&1\\1&1-\lambda}=0$\\\\
+$\implies\brak{\lambda}\brak{\lambda-2}=0$ \\
+\\$\implies \lambda_1=0,\lambda_2=2$
+\\
+  \end{tabular} &
+  \text{Index of $\vec{A}_2$}=2 \\ \hline
+$Q_{3}(x,y)$ &
+  $\vec{A}_3=\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}$  &
+  \begin{tabular}[c]{@{}l@{}}
+  $\myvec{1&\frac{3}{2}\\\frac{3}{2}&2}
+\xleftrightarrow[]{R_2\leftarrow R_2-\frac{3}{2} R_1}
+\myvec{1&\frac{3}{2}\\0&-\frac{1}{4}}$\\
+  \\
+  $\text{rank}(\vec{A}_3)=2$
+  \\
+  \end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}
+  $\quad\quad\mydet{\Vec{A}_3-\lambda\Vec{I}}=0$\\ \\
+$\implies\mydet{1-\lambda&\frac{3}{2}\\\frac{3}{2}&2-\lambda}=0$\\ \\
+$\implies\brak{\lambda-\frac{\sqrt{10}+3}{2}}\brak{\lambda+\frac{\sqrt{10}-3}{2}}=0$\\ \\
+$\implies \lambda_1=\frac{3+\sqrt{10}}{2},\lambda_2=\frac{3-\sqrt{10}}{2}$\\
+  \end{tabular} &
+   $\text{Index of $\vec{A}_3$}  =1$  \\ \hline
+Conclusion &
+  \multicolumn{4}{l|}{We can say that $Q_{1}(x,y)$ and $Q_{3}(x,y)$ are equivalent as the rank and index are same.} \\ \hline
+\end{tabular}
+\caption{Finding which quadratic forms are equivalent}
+\label{table:2}
+\end{table}
 \end{document}
